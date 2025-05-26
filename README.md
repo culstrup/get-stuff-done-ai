@@ -1,5 +1,7 @@
 # Get Stuff Done AI
 
+[![codecov](https://codecov.io/gh/culstrup/get-stuff-done-ai/graph/badge.svg?token=YOUR_TOKEN)](https://codecov.io/gh/culstrup/get-stuff-done-ai)
+
 **URL**: https://gsdat.work
 
 ## Project Overview
