@@ -35,7 +35,7 @@ const AIActionWorkshop = () => {
     },
     {
       question: "Who should attend the AI Action Workshop?",
-      answer: "The workshop is ideal for business professionals, executives, and teams who want to quickly implement AI solutions for specific workflows or processes. It's perfect for those who prefer learning by doing rather than theoretical discussions."
+      answer: "The workshop is ideal for business professionals, executives, franchise owners, multi-location operators, and teams who want to quickly implement AI solutions for specific workflows or processes. It's perfect for those managing complex operations who prefer learning by doing rather than theoretical discussions."
     },
     {
       question: "What will I accomplish during the workshop?",
@@ -87,6 +87,31 @@ const AIActionWorkshop = () => {
                 <li>• <strong>Hands-on experience</strong> with proven AI tools and frameworks</li>
                 <li>• <strong>Executable roadmaps</strong> for scaling AI across your organization</li>
               </ul>
+            </div>
+            
+            {/* Industry-specific use cases */}
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200 mb-8">
+              <h2 className="text-lg font-semibold text-green-900 mb-3">🏢 Real-World AI Applications</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h3 className="font-medium text-green-800 mb-2">For Multi-Location Businesses:</h3>
+                  <ul className="space-y-1 text-sm text-green-700">
+                    <li>• Contract & lease review automation (save $10k+ per location)</li>
+                    <li>• Multi-location performance analytics</li>
+                    <li>• Franchise operations optimization</li>
+                    <li>• Location profitability analysis</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-medium text-green-800 mb-2">For Service Industries:</h3>
+                  <ul className="space-y-1 text-sm text-green-700">
+                    <li>• Customer conversation insights mining</li>
+                    <li>• Revenue optimization (3x catering growth)</li>
+                    <li>• Automated demand generation campaigns</li>
+                    <li>• Operational efficiency improvements</li>
+                  </ul>
+                </div>
+              </div>
             </div>
             
             <div className="bg-secondary/5 p-6 rounded-lg border border-secondary/20 mb-12">
@@ -166,7 +191,7 @@ const AIActionWorkshop = () => {
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold">1</div>
                   <div>
                     <h3 className="text-xl font-medium text-gray-900 mb-2">Discovery Call</h3>
-                    <p className="text-gray-700">We'll discuss your specific challenges and identify the most impactful area for AI implementation during the workshop.</p>
+                    <p className="text-gray-700">We'll discuss your specific challenges - whether it's franchise profitability, operational efficiency, or revenue optimization - and identify the most impactful area for AI implementation during the workshop.</p>
                   </div>
                 </div>
                 

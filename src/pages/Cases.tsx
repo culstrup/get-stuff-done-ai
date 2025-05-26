@@ -93,6 +93,37 @@ const Cases = () => {
             </Button>
           </div>
 
+          {/* Industry Focus Section */}
+          <div className="mb-16 p-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl border border-blue-200">
+            <h2 className="text-2xl font-bold text-primary mb-4">Industry Expertise</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
+                <h3 className="font-semibold text-blue-900 mb-2">Franchise & Multi-Location</h3>
+                <ul className="space-y-1 text-sm text-blue-700">
+                  <li>• Franchisee profitability acceleration</li>
+                  <li>• Multi-location performance tracking</li>
+                  <li>• Contract automation ($10k+ savings)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-green-900 mb-2">Restaurant & Hospitality</h3>
+                <ul className="space-y-1 text-sm text-green-700">
+                  <li>• Catering revenue optimization (3x)</li>
+                  <li>• Customer data insights</li>
+                  <li>• Operational efficiency</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-purple-900 mb-2">Enterprise & Tech</h3>
+                <ul className="space-y-1 text-sm text-purple-700">
+                  <li>• Workflow automation</li>
+                  <li>• AI adoption at scale</li>
+                  <li>• Process optimization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12 mb-20">
             {/* Othership Case Study Card */}
             <Card className={`overflow-hidden border border-gray-200 ${shadows.cardEffect}`}>

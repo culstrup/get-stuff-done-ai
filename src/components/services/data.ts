@@ -7,7 +7,7 @@ export const services: ServiceType[] = [
     description: "Transform messy qualitative data into actionable business insights with AI-powered analysis techniques and custom processing workflows",
     price: "$2,499 per session",
     subtext: "Satisfaction Guaranteed",
-    extraText: "Turn unstructured data into clear insights for faster decision making. Participants learn AI-powered analysis techniques and develop automated processes for ongoing data transformation.",
+    extraText: "Turn unstructured data into clear insights for faster decision making. Participants learn AI-powered analysis techniques and develop automated processes for ongoing data transformation. Perfect for mining customer conversations, survey responses, and operational feedback.",
     features: [
       "Transform messy qualitative data into actionable insights",
       "Learn AI-powered analysis techniques and workflows", 
@@ -78,8 +78,33 @@ export const services: ServiceType[] = [
 
 export const valueMetrics = [
   "Immediate cost reduction (e.g., 30-40% on target processes)",
-  "Direct revenue impact (e.g., 25%+ growth in target areas)",
+  "Direct revenue impact (e.g., 25%+ growth in target areas, 3x catering revenue)",
   "Productivity gains (e.g., 3x faster execution on key tasks)",
   "Time saved (e.g., 15+ hours per week per team)",
-  "ROI delivered (e.g., 5-10x return)",
+  "ROI delivered (e.g., 5-10x return, $10k+ saved per location on contracts)",
 ];
+
+// Industry-specific benefits for diverse personas
+export const industryBenefits = {
+  franchise: [
+    "Accelerate franchisee profitability by 10x",
+    "Automate multi-location performance tracking",
+    "Save $10k+ per location on legal review costs",
+    "Optimize revenue streams like catering (3x growth)",
+    "Build proprietary customer data assets"
+  ],
+  enterprise: [
+    "Transform enterprise workflows with AI automation",
+    "Reduce operational costs by 30-40%",
+    "Accelerate decision-making with data insights",
+    "Scale successful pilots across departments",
+    "Build AI capabilities within existing teams"
+  ],
+  startup: [
+    "Move 10x faster with AI-powered operations",
+    "Build scalable processes from day one",
+    "Maximize runway with efficiency gains",
+    "Compete with larger competitors using AI leverage",
+    "Create data moats through customer insights"
+  ]
+};

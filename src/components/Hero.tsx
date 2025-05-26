@@ -33,7 +33,7 @@ export const Hero = () => {
             />
           </p>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 text-gray-600 px-2 sm:px-0">
-            Expert AI consulting and implementation services that deliver measurable business results. We help organizations accelerate AI adoption with proven strategies, hands-on implementation, and practical automation solutions.
+            Expert AI consulting and implementation services that deliver measurable business results. From franchise operations to enterprise workflows, we help organizations accelerate AI adoption with proven strategies and hands-on implementation.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
             <div className="flex items-center justify-center gap-2 text-gray-600">
@@ -42,11 +42,11 @@ export const Hero = () => {
             </div>
             <div className="flex items-center justify-center gap-2 text-gray-600">
               <span className="w-2 h-2 bg-secondary rounded-full"></span>
-              <span>Business Automation</span>
+              <span>Operational Excellence</span>
             </div>
             <div className="flex items-center justify-center gap-2 text-gray-600">
               <span className="w-2 h-2 bg-secondary rounded-full"></span>
-              <span>Executive Productivity</span>
+              <span>Revenue Optimization</span>
             </div>
           </div>
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
