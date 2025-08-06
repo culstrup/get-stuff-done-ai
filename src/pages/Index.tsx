@@ -36,8 +36,6 @@ const Index = () => {
       <div className="pt-20">
         <Hero />
       </div>
-
-      <ExecutiveMessaging />
       
       <div className="relative">
         {/* Clean section layout without diagonal overlays */}
@@ -56,6 +54,8 @@ const Index = () => {
         <div className="py-8">
           <Services />
         </div>
+        
+        <ExecutiveMessaging />
         
         <ServiceComparison 
           title="Find Your Perfect AI Implementation Path"
