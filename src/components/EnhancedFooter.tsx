@@ -51,14 +51,6 @@ export const EnhancedFooter = () => {
             {/* Contact Info */}
             <div className="space-y-3">
               <a
-                href="tel:+18482610259"
-                className="flex items-center text-primary hover:text-secondary transition-colors group"
-                aria-label="Call our AI Assistant"
-              >
-                <Phone className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
-                <span className="font-medium">AI Assistant: (848) 261-0259</span>
-              </a>
-              <a
                 href="mailto:hello@gsdat.work"
                 className="flex items-center text-primary hover:text-secondary transition-colors group"
                 aria-label="Email Us"

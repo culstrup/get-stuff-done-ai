@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle2, Linkedin, Phone } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
+import VapiWidget from "@/components/VapiWidget";
 
 const StrategySessionConfirmed = () => {
   // Track conversion with Google Analytics
@@ -59,17 +60,23 @@ const StrategySessionConfirmed = () => {
         </div>
 
         <div className="mt-8">
-          <div className="bg-secondary/5 border-2 border-secondary rounded-lg p-6 mb-8">
-            <h3 className="font-bold text-lg text-primary mb-3">📞 Important Next Step</h3>
-            <p className="text-gray-600 mb-4">
-              To make our session as valuable as possible, please take 2 minutes to speak with our AI assistant. This helps me customize the session specifically for your needs.
+          {/* Primary CTA: Voice Widget */}
+          <VapiWidget 
+            assistantId="dc07664b-8543-4305-8a39-686f1f3a50da"
+            publicKey="2e1fbe06-baf7-42e0-98b5-6c5a034288ca"
+          />
+          
+          {/* Secondary Option: Phone Call */}
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-8">
+            <p className="text-sm text-gray-600 mb-3 text-center">
+              <strong>Prefer to call?</strong> You can also reach our AI assistant by phone:
             </p>
             <a 
               href="tel:+14159917188" 
-              className="inline-flex items-center justify-center w-full bg-secondary text-white py-3 px-4 rounded-md hover:bg-secondary/90 transition-colors"
+              className="inline-flex items-center justify-center w-full bg-white border-2 border-secondary text-secondary py-2 px-4 rounded-md hover:bg-secondary/5 transition-colors"
             >
-              <Phone className="h-5 w-5 mr-2" />
-              Call AI Assistant Now: +1 (415) 991-7188
+              <Phone className="h-4 w-4 mr-2" />
+              +1 (415) 991-7188
             </a>
           </div>
           
