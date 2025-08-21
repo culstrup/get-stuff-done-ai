@@ -279,11 +279,6 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </a>
-            <a href="tel:+18482610259" className="relative z-20">
-              <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-3 relative z-20">
-                Call AI Assistant: (848) 261-0259
-              </Button>
-            </a>
           </div>
         </div>
       </div>

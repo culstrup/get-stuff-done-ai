@@ -60,9 +60,8 @@ test.describe('Production Smoke Tests @smoke', () => {
     // Wait for page to load completely with CI-specific timeout
     await page.waitForLoadState('domcontentloaded');
     
-    // Check phone link exists (use first() to handle multiple phone links)
-    const phoneLink = page.locator('a[href^="tel:"]').first();
-    await expect(phoneLink).toBeVisible({ timeout: process.env.CI ? 20000 : 10000 });
+    // Phone links have been removed from main navigation
+    // Only keeping phone CTAs on confirmation pages
     
     // Check calendly button exists (may need scrolling)
     const bookButton = page.getByText('Book a Strategy Call').first();

@@ -1,6 +1,5 @@
 
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
 import { shadows, gradients, buttonStyles, animations, spacing, typography } from "@/lib/design-tokens";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import { ParallaxElement } from "@/components/ui/parallax-element";
@@ -75,17 +74,6 @@ export const Hero = () => {
               <span>Schedule a Strategy Call</span>
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></span>
-            </Button>
-            <Button
-              variant="outline"
-              className={`${buttonStyles.outline.primary} ${buttonStyles.sizes.large} ${typography.touchTargets.button} gap-2 w-full sm:w-auto ${buttonStyles.effects.borderGlow} hover:border-primary/70 hover:bg-primary/5`}
-              onClick={() => window.location.href = "tel:+18482610259"}
-            >
-              <Phone className="h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
-              <span>
-                <span className="font-medium">Speak with our AI Assistant</span>
-                <span className="block text-xs md:text-sm">(848) 261-0259</span>
-              </span>
             </Button>
           </div>
         </div>

@@ -127,7 +127,7 @@ const AIActionWorkshop = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     className={`${buttonStyles.primary} ${buttonStyles.sizes.large} font-semibold ${buttonStyles.effects.liftGlow} ${buttonStyles.effects.morphing} relative`}
-                    onClick={() => workshop?.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
+                    onClick={() => window.open('https://calendly.com/gsdatwork/ai-workshop', '_blank')}
                   >
                     <Calendar className="h-5 w-5 mr-2" />
                     Book Your Workshop
