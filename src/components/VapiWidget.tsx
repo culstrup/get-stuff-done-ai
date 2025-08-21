@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mic, MicOff, Headphones, Volume2 } from "lucide-react";
 
@@ -10,41 +10,29 @@ interface VapiWidgetProps {
 const VapiWidget: React.FC<VapiWidgetProps> = ({ assistantId, publicKey }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  const widgetContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Load the Vapi widget script
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js';
-    script.async = true;
-    script.type = 'text/javascript';
-    
-    script.onload = () => {
-      console.log('Vapi script loaded');
-      setIsLoaded(true);
+    // Load the Vapi widget script only once
+    if (!document.querySelector('script[src*="vapi-ai"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js';
+      script.async = true;
+      script.type = 'text/javascript';
       
-      // Initialize the widget after script loads
-      setTimeout(() => {
-        // The widget should auto-initialize when the script loads
-        // and finds the vapi-widget element
-        const widgetElement = document.querySelector('vapi-widget');
-        if (widgetElement) {
-          console.log('Vapi widget element found');
-        }
-      }, 100);
-    };
+      script.onload = () => {
+        console.log('Vapi script loaded');
+        setIsLoaded(true);
+      };
 
-    script.onerror = () => {
-      console.error('Failed to load Vapi script');
-    };
+      script.onerror = () => {
+        console.error('Failed to load Vapi script');
+      };
 
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
+      document.body.appendChild(script);
+    } else {
+      setIsLoaded(true);
+    }
   }, []);
 
   const handleStartConversation = () => {
@@ -93,12 +81,16 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({ assistantId, publicKey }) => {
         ) : (
           <div className="space-y-4">
             {/* Vapi Widget Container */}
-            <div className="flex justify-center p-4 bg-white rounded-lg border-2 border-secondary/30">
-              {/* The actual Vapi widget element */}
-              <vapi-widget 
-                assistant-id={assistantId}
-                public-key={publicKey}
-              />
+            <div ref={widgetContainerRef} className="flex justify-center p-4 bg-white rounded-lg border-2 border-secondary/30">
+              {/* The actual Vapi widget element - render it directly */}
+              <div dangerouslySetInnerHTML={{
+                __html: `
+                  <vapi-widget 
+                    assistant-id="${assistantId}"
+                    public-key="${publicKey}">
+                  </vapi-widget>
+                `
+              }} />
             </div>
             
             <div className="flex items-center justify-center gap-2 text-secondary animate-pulse">

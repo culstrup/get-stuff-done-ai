@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle2, Linkedin, Phone } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
-import VapiWidget from "@/components/VapiWidget";
+import VapiSimpleCTA from "@/components/VapiSimpleCTA";
 
 const StrategySessionConfirmed = () => {
   // Track conversion with Google Analytics
@@ -28,14 +28,25 @@ const StrategySessionConfirmed = () => {
         canonicalUrl="https://gsdat.work/strategy-session-confirmed"
         keywords="AI strategy session, AI consulting, AI implementation consultation, business transformation"
       />
-      <div className="min-h-screen bg-background flex items-center justify-center py-24 sm:py-32">
-      <div className="mx-auto max-w-2xl px-6 lg:px-8 text-center">
-        <CheckCircle2 className="mx-auto h-16 w-16 text-secondary mb-6" />
-        <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-4">
-          Looking forward to speaking with you very soon
-        </h1>
+      <div className="min-h-screen bg-background py-12 sm:py-24">
+      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-6">
+          <CheckCircle2 className="mx-auto h-12 sm:h-16 w-12 sm:w-16 text-secondary mb-4" />
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary mb-2">
+            Your Session is Confirmed!
+          </h1>
+          <p className="text-lg text-gray-600">
+            Looking forward to speaking with you very soon
+          </p>
+        </div>
+
+        {/* Move CTA up here for mobile visibility */}
+        <div className="mb-8">
+          {/* Primary CTA: Direct Phone Call to AI Assistant */}
+          <VapiSimpleCTA phoneNumber="+14159917188" />
+        </div>
         
-        <div className="mt-8 space-y-6 text-left bg-gray-50 p-8 rounded-lg">
+        <div className="space-y-6 text-left bg-gray-50 p-6 sm:p-8 rounded-lg">
           <h2 className="text-xl font-semibold text-primary">What to Expect</h2>
           <ul className="space-y-4 text-gray-600">
             <li className="flex items-start">
@@ -58,29 +69,9 @@ const StrategySessionConfirmed = () => {
             </li>
           </ul>
         </div>
-
+          
         <div className="mt-8">
-          {/* Primary CTA: Voice Widget */}
-          <VapiWidget 
-            assistantId="dc07664b-8543-4305-8a39-686f1f3a50da"
-            publicKey="2e1fbe06-baf7-42e0-98b5-6c5a034288ca"
-          />
-          
-          {/* Secondary Option: Phone Call */}
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-8">
-            <p className="text-sm text-gray-600 mb-3 text-center">
-              <strong>Prefer to call?</strong> You can also reach our AI assistant by phone:
-            </p>
-            <a 
-              href="tel:+14159917188" 
-              className="inline-flex items-center justify-center w-full bg-white border-2 border-secondary text-secondary py-2 px-4 rounded-md hover:bg-secondary/5 transition-colors"
-            >
-              <Phone className="h-4 w-4 mr-2" />
-              +1 (415) 991-7188
-            </a>
-          </div>
-          
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 text-center">
             Please check your email for the meeting details and Google Meet link.
           </p>
           <a 
