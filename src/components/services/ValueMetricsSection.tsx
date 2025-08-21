@@ -45,17 +45,6 @@ export const ValueMetricsSection = () => {
           >
             See Client Success Stories
           </Button>
-          <Button
-            variant="outline"
-            className="border border-primary text-primary hover:bg-primary/10 gap-2"
-            onClick={() => window.location.href = "tel:+18482610259"}
-          >
-            <Phone className="h-4 w-4" />
-            <span>
-              <span className="font-medium">Talk to our AI Assistant</span>
-              <span className="block text-xs">(848) 261-0259</span>
-            </span>
-          </Button>
         </div>
         <p className="text-gray-600">
           Or{" "}

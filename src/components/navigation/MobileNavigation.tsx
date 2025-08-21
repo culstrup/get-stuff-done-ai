@@ -85,14 +85,6 @@ export const MobileNavigation = () => {
             >
               Book a Strategy Call
             </Button>
-            <Button
-              variant="outline"
-              className="w-full border border-primary text-primary hover:bg-primary/10 gap-2 py-6"
-              onClick={() => window.location.href = "tel:+18482610259"}
-            >
-              <Phone className="h-4 w-4" />
-              <span>(848) 261-0259</span>
-            </Button>
           </div>
         </div>
       </SheetContent>

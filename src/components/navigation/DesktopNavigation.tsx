@@ -245,18 +245,6 @@ export const DesktopNavigation = () => {
       </NavigationMenu>
       
       <Button
-        variant="outline"
-        className={`ml-4 ${buttonStyles.outline.primary} gap-2 ${shadows.buttonEffect}`}
-        onClick={() => window.location.href = "tel:+18482610259"}
-      >
-        <Phone className="h-4 w-4" />
-        <span>
-          <span className="font-medium">Call</span>
-          <span className="hidden lg:block text-xs">(848) 261-0259</span>
-        </span>
-      </Button>
-      
-      <Button
         className={`ml-2 ${buttonStyles.primary} ${shadows.buttonEffect}`}
         onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
       >
