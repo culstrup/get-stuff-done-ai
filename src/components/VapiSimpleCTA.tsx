@@ -9,6 +9,9 @@ interface VapiSimpleCTAProps {
 const VapiSimpleCTA: React.FC<VapiSimpleCTAProps> = ({ 
   phoneNumber = "+14159917188" 
 }) => {
+  // Sanitize phone number to prevent XSS attacks
+  const sanitizedPhoneNumber = phoneNumber.replace(/[^+\d\s\-\(\)]/g, '');
+  
   return (
     <div className="w-full">
       {/* Primary CTA - Voice Call */}
@@ -37,7 +40,7 @@ const VapiSimpleCTA: React.FC<VapiSimpleCTAProps> = ({
         </div>
 
         {/* Main CTA Button - Direct Phone Call */}
-        <a href={`tel:${phoneNumber}`} className="block w-full">
+        <a href={`tel:${sanitizedPhoneNumber}`} className="block w-full">
           <Button
             className="w-full bg-secondary hover:bg-secondary/90 text-white py-4 text-lg font-semibold gap-3 shadow-lg"
           >
@@ -47,7 +50,7 @@ const VapiSimpleCTA: React.FC<VapiSimpleCTAProps> = ({
         </a>
 
         <p className="text-sm text-gray-600 text-center mt-3">
-          {phoneNumber.replace('+1', '+1 ').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}
+          {sanitizedPhoneNumber.replace('+1', '+1 ').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}
         </p>
 
       </div>
