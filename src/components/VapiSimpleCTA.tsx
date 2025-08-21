@@ -10,7 +10,7 @@ const VapiSimpleCTA: React.FC<VapiSimpleCTAProps> = ({
   phoneNumber = "+14159917188" 
 }) => {
   // Sanitize phone number to prevent XSS attacks
-  const sanitizedPhoneNumber = phoneNumber.replace(/[^+\d\s\-\(\)]/g, '');
+  const sanitizedPhoneNumber = phoneNumber.replace(/[^+\d\s\-()]/g, '');
   
   return (
     <div className="w-full">
