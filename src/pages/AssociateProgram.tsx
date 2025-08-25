@@ -594,7 +594,7 @@ const AssociateProgram = () => {
                 <Button
                   size="lg"
                   className={`${buttonStyles.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300`}
-                  onClick={() => window.open("https://chatgpt.com/g/g-685435835688819192a9245b85512233-ai-engagement-assessment", "_blank")}
+                   onClick={() => window.open("https://chatgpt.com/g/g-685435835688819192a9245b85512233-ai-engagement-assessment", "_blank", "noopener,noreferrer")}
                 >
                   <Target className="mr-2 h-5 w-5" />
                   Take AI Engagement Assessment
