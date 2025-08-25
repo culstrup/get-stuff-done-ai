@@ -1,3 +1,4 @@
 
 User-agent: *
 Disallow: /private-files/
+Sitemap: https://gsdat.work/sitemap.xml

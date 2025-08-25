@@ -86,14 +86,26 @@ const generateSitemap = () => {
       changefreq: 'weekly',
       priority: '0.9'
     },
-    { 
-      url: 'https://gsdat.work/ai-automation-integration', 
+    {
+      url: 'https://gsdat.work/ai-automation-integration',
       lastmod: today,
       changefreq: 'weekly',
       priority: '0.9'
     },
-    { 
-      url: 'https://gsdat.work/triple-a-transformation', 
+    {
+      url: 'https://gsdat.work/associate-program',
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.9'
+    },
+    {
+      url: 'https://gsdat.work/methodology',
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.9'
+    },
+    {
+      url: 'https://gsdat.work/triple-a-transformation',
       lastmod: today,
       changefreq: 'weekly',
       priority: '0.9'
