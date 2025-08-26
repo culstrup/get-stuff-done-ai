@@ -114,11 +114,13 @@ const AssociateProgram = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <KeywordOptimizedSEO 
+      <KeywordOptimizedSEO
         title="Associate Program - Join Our AI Transformation Network | GSD at Work"
         content="Become a GSD at Work associate. Deliver AI transformations, earn outcome-based compensation, maintain flexibility. Clear path from associate to principal to spin-off CEO. Apply today."
         canonicalUrl="https://gsdat.work/associate-program"
         pageType="service"
+        datePublished={currentDate}
+        dateModified={currentDate}
         structuredData={[serviceStructuredData, faqStructuredData]}
         ogType="website"
         ogImage="https://gsdat.work/og-image.png"
