@@ -574,6 +574,36 @@ const AssociateProgram = () => {
         </div>
       </section>
 
+      {/* AI Engagement Assessment */}
+      <section className={`${spacing.section.md}`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-primary mb-4">
+                Test Your Readiness
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Before applying, use our custom GPT to assess your readiness for AI engagement work. 
+                Get personalized insights on your strengths and areas for development.
+              </p>
+            </div>
+            
+            <Button
+              size="lg"
+              className={`${buttonStyles.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300 text-lg px-8 py-4`}
+              onClick={() => window.open("https://chatgpt.com/g/g-685435835688819192a9245b85512233-ai-engagement-assessment", "_blank")}
+            >
+              <Target className="mr-3 h-6 w-6" />
+              Take AI Engagement Assessment
+            </Button>
+            
+            <p className="mt-6 text-gray-600">
+              Free assessment • Takes 5-10 minutes • Powered by ChatGPT
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Application CTA */}
       <section className={`${spacing.section.md}`}>
         <div className="container mx-auto px-4">
