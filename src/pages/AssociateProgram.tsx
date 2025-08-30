@@ -159,11 +159,18 @@ const AssociateProgram = () => {
                 💰 Performance-Based Compensation
               </p>
               <p className="text-emerald-800">
-                No wages, no timesheets. Earn based on the value you deliver. 
+                No wages, no timesheets. Earn based on the value you deliver.
                 Top performers lead teams and spin-off companies.
               </p>
+              <Button
+                size="sm"
+                className={`${buttonStyles.outline.primary} ${shadows.buttonEffect} mt-4 hover:scale-105 transition-transform duration-300`}
+                onClick={() => window.open("https://arlos.pro", "_blank")}
+              >
+                Learn about our compensation philosophy
+              </Button>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 size="lg"
