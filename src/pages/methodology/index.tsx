@@ -136,11 +136,13 @@ const Methodology = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <KeywordOptimizedSEO 
+      <KeywordOptimizedSEO
         title="Open Source AI Methodologies - Free Frameworks | GSD at Work"
         content="Access battle-tested AI transformation methodologies for free. Triple-A framework, AI Oracle system, and team productivity frameworks. Enable permissionless learning and accelerate your AI journey."
         canonicalUrl="https://gsdat.work/methodology"
         pageType="service"
+        datePublished={currentDate}
+        dateModified={currentDate}
         structuredData={[serviceStructuredData]}
         ogType="website"
         ogImage="https://gsdat.work/og-image.png"

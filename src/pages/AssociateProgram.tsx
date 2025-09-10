@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Calendar, DollarSign, TrendingUp, Users, Briefcase, Target, Award, ArrowRight, Zap, FileCheck, AlertCircle, BookOpen } from "lucide-react";
+import { Check, Calendar, DollarSign, TrendingUp, Users, Briefcase, Target, Award, ArrowRight, Zap, FileCheck, AlertCircle, BookOpen, ExternalLink } from "lucide-react";
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
@@ -114,11 +114,13 @@ const AssociateProgram = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <KeywordOptimizedSEO 
+      <KeywordOptimizedSEO
         title="Associate Program - Join Our AI Transformation Network | GSD at Work"
         content="Become a GSD at Work associate. Deliver AI transformations, earn outcome-based compensation, maintain flexibility. Clear path from associate to principal to spin-off CEO. Apply today."
         canonicalUrl="https://gsdat.work/associate-program"
         pageType="service"
+        datePublished={currentDate}
+        dateModified={currentDate}
         structuredData={[serviceStructuredData, faqStructuredData]}
         ogType="website"
         ogImage="https://gsdat.work/og-image.png"
@@ -152,16 +154,6 @@ const AssociateProgram = () => {
               associate to principal to CEO.
             </p>
             
-            <div className="glass-effect border border-emerald-200/50 rounded-2xl p-8 mb-8 max-w-2xl mx-auto shadow-xl animate-fade-in-up animation-delay-300 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
-              <p className="text-lg font-semibold text-emerald-900 mb-2">
-                💰 Performance-Based Compensation
-              </p>
-              <p className="text-emerald-800">
-                No wages, no timesheets. Earn based on the value you deliver. 
-                Top performers lead teams and spin-off companies.
-              </p>
-            </div>
-            
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 size="lg"
@@ -178,6 +170,31 @@ const AssociateProgram = () => {
                 onClick={() => window.location.href = "/methodology"}
               >
                 Study Our Methods First
+              </Button>
+            </div>
+
+            <div className="glass-effect border border-emerald-200/50 rounded-2xl p-8 mt-8 max-w-2xl mx-auto shadow-xl animate-fade-in-up animation-delay-300 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
+              <p className="text-lg font-semibold text-emerald-900 mb-2">
+                💰 Performance-Based Compensation
+              </p>
+              <p className="text-emerald-800">
+                No wages, no timesheets. Earn based on the value you deliver.
+                Top performers lead teams and spin-off companies.
+              </p>
+              <Button
+                asChild
+                size="sm"
+                className={`${buttonStyles.primary} ${shadows.buttonEffect} mt-4 hover:scale-105 transition-transform duration-300`}
+              >
+                <a
+                  href="https://arlos.pro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center"
+                >
+                  Learn about our compensation philosophy
+                  <ExternalLink className="ml-1 h-4 w-4" />
+                </a>
               </Button>
             </div>
           </div>
@@ -568,6 +585,36 @@ const AssociateProgram = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Engagement Assessment */}
+      <section className={`${spacing.section.md}`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-primary mb-4">
+                Test Your Readiness
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Before applying, use our custom GPT to assess your readiness for AI engagement work. 
+                Get personalized insights on your strengths and areas for development.
+              </p>
+            </div>
+            
+            <Button
+              size="lg"
+              className={`${buttonStyles.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300 text-lg px-8 py-4`}
+              onClick={() => window.open("https://chatgpt.com/g/g-685435835688819192a9245b85512233-ai-engagement-assessment", "_blank")}
+            >
+              <Target className="mr-3 h-6 w-6" />
+              Take AI Engagement Assessment
+            </Button>
+            
+            <p className="mt-6 text-gray-600">
+              Free assessment • Takes 5-10 minutes • Powered by ChatGPT
+            </p>
           </div>
         </div>
       </section>
