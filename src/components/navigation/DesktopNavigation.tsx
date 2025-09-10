@@ -233,7 +233,33 @@ export const DesktopNavigation = () => {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          
+
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
+            <NavigationMenuContent className="bg-white">
+              <ul className="grid w-[300px] gap-3 p-4">
+                {[
+                  { href: "/industries/law-firms", title: "AI for Law Firms", desc: "Secure legal workflows" },
+                  { href: "/industries/manufacturing", title: "AI in Manufacturing", desc: "Operational efficiency" },
+                  { href: "/industries/energy", title: "AI for Energy", desc: "Data-driven operations" },
+                  { href: "/industries/financial-services", title: "AI in Financial Services", desc: "Compliance and automation" },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <NavigationMenuLink asChild>
+                      <Link
+                        to={item.href}
+                        className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
+                      >
+                        <div className="text-sm font-medium leading-none">{item.title}</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">{item.desc}</p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
               <Link to="/associate-program" className={navigationMenuTriggerStyle()}>

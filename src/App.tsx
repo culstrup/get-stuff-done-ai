@@ -37,6 +37,11 @@ const SalesDiscovery = lazy(() => import("./pages/methodology/SalesDiscovery"));
 const ActionWorkshop = lazy(() => import("./pages/methodology/ActionWorkshop"));
 const AIOracle = lazy(() => import("./pages/methodology/AIOracle"));
 const AssociateProgram = lazy(() => import("./pages/AssociateProgram"));
+const LawFirms = lazy(() => import("./pages/industries/law-firms"));
+const Manufacturing = lazy(() => import("./pages/industries/manufacturing"));
+const Energy = lazy(() => import("./pages/industries/energy"));
+const FinancialServices = lazy(() => import("./pages/industries/financial-services"));
+const Evidence = lazy(() => import("./pages/evidence"));
 
 const queryClient = new QueryClient();
 
@@ -74,6 +79,11 @@ const App = () => (
               <Route path="/ai-automation-integration" element={<AIAutomationIntegration />} />
               <Route path="/triple-a-transformation" element={<TripleATransformation />} />
               <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
+              <Route path="/industries/law-firms" element={<LawFirms />} />
+              <Route path="/industries/manufacturing" element={<Manufacturing />} />
+              <Route path="/industries/energy" element={<Energy />} />
+              <Route path="/industries/financial-services" element={<FinancialServices />} />
+              <Route path="/evidence" element={<Evidence />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:id" element={<BlogPostPage />} />
               <Route path="/not-found" element={<NotFound />} />

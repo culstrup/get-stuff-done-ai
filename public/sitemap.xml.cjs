@@ -110,8 +110,38 @@ const generateSitemap = () => {
       changefreq: 'weekly',
       priority: '0.9'
     },
-    { 
-      url: 'https://gsdat.work/blog', 
+    {
+      url: 'https://gsdat.work/industries/law-firms',
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.8'
+    },
+    {
+      url: 'https://gsdat.work/industries/manufacturing',
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.8'
+    },
+    {
+      url: 'https://gsdat.work/industries/energy',
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.8'
+    },
+    {
+      url: 'https://gsdat.work/industries/financial-services',
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.8'
+    },
+    {
+      url: 'https://gsdat.work/evidence',
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.7'
+    },
+    {
+      url: 'https://gsdat.work/blog',
       lastmod: today,
       changefreq: 'weekly',
       priority: '0.9'

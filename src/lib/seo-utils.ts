@@ -91,6 +91,40 @@ export const generateOrganizationStructuredData = () => {
       "contactType": "customer service",
       "email": "hello@gsdat.work",
       "availableLanguage": "English"
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      "name": "AI Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "AI Action Workshop", "url": "https://gsdat.work/ai-action-workshop" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "AI Oracle Session", "url": "https://gsdat.work/ai-oracle-session" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "AI Automation & Integration", "url": "https://gsdat.work/ai-automation-integration" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "AI for Law Firms", "url": "https://gsdat.work/industries/law-firms" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "AI in Manufacturing", "url": "https://gsdat.work/industries/manufacturing" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "AI for Energy", "url": "https://gsdat.work/industries/energy" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "AI in Financial Services", "url": "https://gsdat.work/industries/financial-services" }
+        }
+      ]
     }
   };
 };

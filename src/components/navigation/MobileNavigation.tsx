@@ -57,6 +57,18 @@ export const MobileNavigation = () => {
               <Link to="/triple-a-transformation" className="text-lg font-medium">
                 Triple-A Transformation
               </Link>
+              <Link to="/industries/law-firms" className="text-lg font-medium">
+                AI for Law Firms
+              </Link>
+              <Link to="/industries/manufacturing" className="text-lg font-medium">
+                AI in Manufacturing
+              </Link>
+              <Link to="/industries/energy" className="text-lg font-medium">
+                AI for Energy
+              </Link>
+              <Link to="/industries/financial-services" className="text-lg font-medium">
+                AI in Financial Services
+              </Link>
               <Link to="/cases" className="text-lg font-medium">
                 Case Studies
               </Link>

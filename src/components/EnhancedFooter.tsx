@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Phone, MessageSquare, Linkedin, ArrowRight, ExternalLink } from "lucide-react";
+import { MessageSquare, Linkedin, ArrowRight, ExternalLink } from "lucide-react";
 import { Separator } from "./ui/separator";
 
 export const EnhancedFooter = () => {
@@ -14,10 +14,17 @@ export const EnhancedFooter = () => {
       { name: "Triple-A Transformation", href: "/triple-a-transformation", description: "Complete organizational AI adoption" },
       { name: "AI Oracle Session", href: "/ai-oracle-session", description: "Executive intelligence system" },
     ],
+    industries: [
+      { name: "AI for Law Firms", href: "/industries/law-firms", description: "Secure legal workflows" },
+      { name: "AI in Manufacturing", href: "/industries/manufacturing", description: "Operational efficiency" },
+      { name: "AI for Energy", href: "/industries/energy", description: "Data-driven operations" },
+      { name: "AI in Financial Services", href: "/industries/financial-services", description: "Compliance and automation" },
+    ],
     resources: [
       { name: "AI Tooling Report", href: "/ai-tooling-report", description: "2025 implementation guide" },
       { name: "Professional Insights", href: "/blog", description: "Expert AI implementation blog" },
       { name: "Case Studies", href: "/cases", description: "Real-world success stories" },
+      { name: "Evidence", href: "/evidence", description: "Proof of outcomes" },
       { name: "Free Consultation", href: "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", external: true, description: "Schedule your strategy session" },
     ],
     company: [
@@ -31,7 +38,7 @@ export const EnhancedFooter = () => {
     <footer className="bg-gradient-to-br from-gray-50 to-white border-t border-gray-200" itemScope itemType="https://schema.org/WPFooter">
       <div className="container mx-auto px-4 py-16">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <div className="md:col-span-1">
             <div className="mb-6">
@@ -44,8 +51,8 @@ export const EnhancedFooter = () => {
                 <span className="text-xl font-bold text-primary">at Work</span>
               </Link>
             </div>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Expert AI consulting and implementation services. From insight to action in minutes, not months.
+            <p className="text-sm text-muted-foreground mb-6">
+              AI adoption and implementation for law firms, manufacturing, energy, and financial services.
             </p>
             
             {/* Contact Info */}
@@ -66,6 +73,27 @@ export const EnhancedFooter = () => {
             <h3 className="text-lg font-semibold text-primary mb-4">Services</h3>
             <nav className="space-y-3">
               {navigationLinks.services.map((link) => (
+                <div key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="group flex items-start hover:text-secondary transition-colors"
+                  >
+                    <ArrowRight className="h-3 w-3 mt-1 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div>
+                      <div className="font-medium">{link.name}</div>
+                      <div className="text-xs text-gray-500">{link.description}</div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </nav>
+          </div>
+
+          {/* Industries */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary mb-4">Industries</h3>
+            <nav className="space-y-3">
+              {navigationLinks.industries.map((link) => (
                 <div key={link.name}>
                   <Link
                     to={link.href}
