@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ExternalLink, Github, Download, BookOpen, Users, Target, TrendingUp, BarChart, FileText, Lightbulb, Scale, Search, Phone, Heart, DollarSign, Clock, Brain, Zap, AlertCircle, Mic, Shield, Link, ArrowRight, XCircle } from "lucide-react";
+import { Check, ExternalLink, Github, Download, BookOpen, Users, Target, TrendingUp, BarChart, FileText, Lightbulb, Scale, Search, Phone, Heart, DollarSign, Clock, Brain, Zap, AlertCircle, Mic, Shield, Link, ArrowRight, XCircle, Trophy, MessageSquare } from "lucide-react";
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
@@ -335,6 +335,438 @@ Draw a line from our potential solution to financial outcomes
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Qualification Patterns - Key Differentiators */}
+      <section className={`${spacing.section.md} bg-gradient-to-br from-blue-50 via-white to-purple-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center">
+              The Five Key Differentiators
+            </h2>
+            <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+              Pattern recognition from hundreds of calls reveals what separates winning from losing prospects
+            </p>
+            
+            <div className="space-y-8">
+              {/* Differentiator 1: Problem Framing */}
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl transition-all duration-300`}>
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-xl flex items-center gap-2">
+                      <Target className="w-5 h-5 text-primary" />
+                      Problem Framing: Single Point of Pain vs. Laundry List
+                    </CardTitle>
+                    <Badge className="bg-red-100 text-red-800">Most Critical</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                      <h4 className="font-semibold text-green-900 mb-2 flex items-center gap-2">
+                        <Check className="w-4 h-4" />
+                        Winning Pattern
+                      </h4>
+                      <p className="text-sm text-green-800 mb-3">
+                        Laser focus on one or two critical, interconnected problems that are:
+                      </p>
+                      <ul className="space-y-1 text-sm text-green-700">
+                        <li>• Specific and quantifiable</li>
+                        <li>• Tied to revenue or strategic goals</li>
+                        <li>• Causing immediate business pain</li>
+                        <li>• Clear in scope and impact</li>
+                      </ul>
+                      <p className="text-xs text-green-600 mt-3 italic">
+                        Example: "Our inefficient recruiting process for 30,000+ annual hires is our biggest revenue risk"
+                      </p>
+                    </div>
+                    <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                      <h4 className="font-semibold text-red-900 mb-2 flex items-center gap-2">
+                        <XCircle className="w-4 h-4" />
+                        Losing Pattern
+                      </h4>
+                      <p className="text-sm text-red-800 mb-3">
+                        Scattered list of potential improvements without prioritization:
+                      </p>
+                      <ul className="space-y-1 text-sm text-red-700">
+                        <li>• Multiple "nice-to-have" improvements</li>
+                        <li>• No central urgent driver</li>
+                        <li>• Exploratory brainstorming mode</li>
+                        <li>• Unable to prioritize impact</li>
+                      </ul>
+                      <p className="text-xs text-red-600 mt-3 italic">
+                        Example: "We want to improve case management, mailroom, billing, intake, and reporting"
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Differentiator 2: Urgency & Stakes */}
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl transition-all duration-300`}>
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    <AlertCircle className="w-5 h-5 text-orange-600" />
+                    Urgency & Stakes: Bleeding Neck vs. Vitamin
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                      <h4 className="font-semibold text-green-900 mb-2">Winning: High Stakes, Immediate Timeline</h4>
+                      <ul className="space-y-2 text-sm text-green-700">
+                        <li className="flex items-start gap-2">
+                          <Zap className="w-4 h-4 mt-0.5" />
+                          <span>Clear time-bound financial threat</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Zap className="w-4 h-4 mt-0.5" />
+                          <span>Risk of losing major customers</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Zap className="w-4 h-4 mt-0.5" />
+                          <span>Hard deadlines with consequences</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                      <h4 className="font-semibold text-red-900 mb-2">Losing: Important but Not Urgent</h4>
+                      <ul className="space-y-2 text-sm text-red-700">
+                        <li className="flex items-start gap-2">
+                          <Clock className="w-4 h-4 mt-0.5" />
+                          <span>Long-term efficiency improvements</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Clock className="w-4 h-4 mt-0.5" />
+                          <span>Recurring inconveniences, not crises</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Clock className="w-4 h-4 mt-0.5" />
+                          <span>Future-state desires, not present pain</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Differentiator 3: Authority */}
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl transition-all duration-300`}>
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    <Users className="w-5 h-5 text-blue-600" />
+                    Prospect's Role: Decision-Maker vs. Information Gatherer
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                      <h4 className="font-semibold text-green-900 mb-2">Winning: Direct Authority</h4>
+                      <p className="text-sm text-green-700">
+                        Speaking directly to C-Suite, President, or Department Head with:
+                      </p>
+                      <ul className="mt-2 space-y-1 text-sm text-green-700">
+                        <li>• P&L responsibility</li>
+                        <li>• Budget authority</li>
+                        <li>• Mandate to solve the problem</li>
+                      </ul>
+                    </div>
+                    <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                      <h4 className="font-semibold text-red-900 mb-2">Losing: Intermediary</h4>
+                      <p className="text-sm text-red-700">
+                        Speaking with someone who:
+                      </p>
+                      <ul className="mt-2 space-y-1 text-sm text-red-700">
+                        <li>• Needs approval from others</li>
+                        <li>• Delegates next steps to subordinates</li>
+                        <li>• Is "looking into options"</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Differentiator 4: Call Dynamics */}
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl transition-all duration-300`}>
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    <ArrowRight className="w-5 h-5 text-purple-600" />
+                    Call Dynamics: Convergent vs. Divergent
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                      <h4 className="font-semibold text-green-900 mb-2">Winning: Quick Convergence</h4>
+                      <p className="text-sm text-green-700">
+                        Conversation quickly narrows to a specific, actionable "quick win" that can be implemented immediately
+                      </p>
+                    </div>
+                    <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                      <h4 className="font-semibold text-red-900 mb-2">Losing: Endless Exploration</h4>
+                      <p className="text-sm text-red-700">
+                        Conversation remains broad, exploring many possibilities without landing on a concrete starting point
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Differentiator 5: Mindset */}
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl transition-all duration-300`}>
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    <Brain className="w-5 h-5 text-indigo-600" />
+                    Mindset: Problem-Focused vs. Solution-Focused
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                      <h4 className="font-semibold text-green-900 mb-2">Winning: Problem Obsessed</h4>
+                      <p className="text-sm text-green-700">
+                        Describes the pain, business impact, and consequences of inaction. Open to your expertise on how to solve it.
+                      </p>
+                    </div>
+                    <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                      <h4 className="font-semibold text-red-900 mb-2">Losing: Solution Shopping</h4>
+                      <p className="text-sm text-red-700">
+                        Fixated on specific technical features. Gets stuck on "can AI do X?" rather than the business problem to solve.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Rorschach Test Technique */}
+      <section className={`${spacing.section.md}`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <Card className={`${shadows.cardEffect} border-2 border-primary/20 bg-gradient-to-br from-blue-50 to-purple-50`}>
+              <CardHeader className="pb-4">
+                <Badge className="mb-4 bg-primary text-white">Game-Changing Technique</Badge>
+                <CardTitle className="text-2xl flex items-center gap-3">
+                  <Lightbulb className="w-6 h-6 text-yellow-500" />
+                  The Rorschach Test: Your Hidden Qualification Filter
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="bg-white/80 p-6 rounded-lg">
+                  <h3 className="font-semibold text-lg mb-3">The Discovery</h3>
+                  <p className="text-gray-700 mb-4">
+                    Analysis of successful calls reveals a powerful pattern: When you tell an illustrative story early in the conversation,
+                    the prospect's reaction instantly reveals whether they'll become a customer.
+                  </p>
+                  <p className="text-gray-700 font-medium">
+                    The story is the inkblot. Their response tells you everything.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-green-50 p-5 rounded-lg border border-green-200">
+                    <h4 className="font-semibold text-green-900 mb-3 flex items-center gap-2">
+                      <Check className="w-5 h-5" />
+                      Winning Response Pattern
+                    </h4>
+                    <p className="text-sm text-green-800 mb-3">
+                      The prospect immediately:
+                    </p>
+                    <ul className="space-y-2 text-sm text-green-700">
+                      <li>• Interrupts to ask about the workflow</li>
+                      <li>• Recognizes their own problem in your story</li>
+                      <li>• Reframes their situation in that context</li>
+                      <li>• Scales it to their larger challenge</li>
+                    </ul>
+                    <p className="text-xs text-green-600 mt-3 italic">
+                      "That's exactly our problem, but we have it at 10x the scale..."
+                    </p>
+                  </div>
+
+                  <div className="bg-red-50 p-5 rounded-lg border border-red-200">
+                    <h4 className="font-semibold text-red-900 mb-3 flex items-center gap-2">
+                      <XCircle className="w-5 h-5" />
+                      Losing Response Pattern
+                    </h4>
+                    <p className="text-sm text-red-800 mb-3">
+                      The prospect:
+                    </p>
+                    <ul className="space-y-2 text-sm text-red-700">
+                      <li>• Asks technical questions about HOW</li>
+                      <li>• Treats it as an interesting anecdote</li>
+                      <li>• Gets stuck on implementation details</li>
+                      <li>• Never connects it to their own pain</li>
+                    </ul>
+                    <p className="text-xs text-red-600 mt-3 italic">
+                      "What technology did you use? Is that ChatGPT? How does it integrate?"
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-yellow-50 p-5 rounded-lg border border-yellow-200">
+                  <p className="text-sm text-yellow-900">
+                    <strong className="text-yellow-900">Key Insight:</strong> You're not just telling stories for rapport. 
+                    You're running a live qualification test. Winners see their world in your story. 
+                    Losers just see an interesting story.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* The Anchor-Story-Pivot Framework */}
+      <section className={`${spacing.section.md} bg-gray-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center">
+              The Anchor-Story-Pivot Framework
+            </h2>
+            <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+              Stop waiting for prospects to reveal their problems. Use this three-step process to surface their most critical pain in the first 10-15 minutes.
+            </p>
+
+            <div className="space-y-6">
+              {/* Step 1: Anchor */}
+              <Card className={`${shadows.cardEffect} hover:shadow-xl transition-all duration-300`}>
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                      1
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">Anchor (Listen for the Domain)</CardTitle>
+                      <CardDescription>First 2-3 minutes</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-3">
+                    Listen for the general business area of their pain. Don't let them give you a laundry list - just get a sense of the territory:
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <p className="font-semibold text-sm text-blue-900">Sales/Growth</p>
+                      <p className="text-xs text-blue-700">Pipeline, conversion, outreach</p>
+                    </div>
+                    <div className="bg-green-50 p-3 rounded-lg">
+                      <p className="font-semibold text-sm text-green-900">Operations</p>
+                      <p className="text-xs text-green-700">Efficiency, automation, quality</p>
+                    </div>
+                    <div className="bg-purple-50 p-3 rounded-lg">
+                      <p className="font-semibold text-sm text-purple-900">Talent/Hiring</p>
+                      <p className="text-xs text-purple-700">Recruiting, training, retention</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Step 2: Story */}
+              <Card className={`${shadows.cardEffect} hover:shadow-xl transition-all duration-300`}>
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                      2
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">Story (Deploy the Rorschach Test)</CardTitle>
+                      <CardDescription>Minutes 3-7</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-4">
+                    Interrupt their exploration with: "That reminds me of a situation with another client..." 
+                    Then tell your most relevant, vivid success story for that domain:
+                  </p>
+                  <div className="space-y-3">
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <p className="font-semibold text-sm">If they mention growth:</p>
+                      <p className="text-sm text-gray-600">Tell about analyzing 40,000 data points to drive word-of-mouth growth</p>
+                    </div>
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <p className="font-semibold text-sm">If they mention operations:</p>
+                      <p className="text-sm text-gray-600">Tell about solving a customer service crisis that risked major accounts</p>
+                    </div>
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <p className="font-semibold text-sm">If they mention talent:</p>
+                      <p className="text-sm text-gray-600">Tell about fixing a high-volume hiring process losing revenue</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-4 italic">
+                    Focus on the business problem and outcome, not the technology.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 3: Pivot */}
+              <Card className={`${shadows.cardEffect} hover:shadow-xl transition-all duration-300 border-2 border-primary/20`}>
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                      3
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">Pivot (Ask The One Question)</CardTitle>
+                      <CardDescription>Immediately after the story</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-primary/5 p-6 rounded-lg mb-4">
+                    <p className="text-lg font-semibold text-primary mb-2">The One Question:</p>
+                    <p className="text-xl italic text-gray-800">
+                      "What is the single biggest, most expensive version of that problem in your world right now?"
+                    </p>
+                  </div>
+                  
+                  <p className="text-gray-700 mb-4">This question is engineered to:</p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-start gap-3">
+                      <Target className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-sm">Force Prioritization</p>
+                        <p className="text-xs text-gray-600">Compels them to identify their #1 pain</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <DollarSign className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-sm">Frame for Value</p>
+                        <p className="text-xs text-gray-600">"Most expensive" forces ROI thinking</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Link className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-sm">Connect to Proof</p>
+                        <p className="text-xs text-gray-600">Anchors to your proven success</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Shield className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-sm">Qualify Authority</p>
+                        <p className="text-xs text-gray-600">Leaders answer instantly, others struggle</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <p className="text-sm text-yellow-900">
+                      <strong>Critical:</strong> A strategic leader will answer immediately with specifics. 
+                      An information gatherer will hesitate, deflect, or stay vague. Their response is your clearest qualification signal.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -990,12 +1422,136 @@ Draw a line from our potential solution to financial outcomes
         </div>
       </section>
 
+      {/* Prospect Profiles */}
+      <section className={`${spacing.section.md} bg-gradient-to-br from-indigo-50 via-white to-blue-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary mb-12 text-center">
+              Profile of a Winning vs. Losing Prospect
+            </h2>
+            
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              {/* Winning Prospect Profile */}
+              <Card className={`${shadows.cardEffect} border-2 border-green-300 bg-gradient-to-br from-green-50 to-emerald-50`}>
+                <CardHeader>
+                  <Badge className="mb-3 bg-green-600 text-white">Ideal Prospect</Badge>
+                  <CardTitle className="text-2xl text-green-900 flex items-center gap-2">
+                    <Trophy className="w-6 h-6 text-green-600" />
+                    The Strategic Firefighter
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-green-900 mb-2">Role</h4>
+                      <p className="text-sm text-green-800">
+                        C-Suite, President, or Department Head with P&L or critical KPI responsibility
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-green-900 mb-2">Problem</h4>
+                      <p className="text-sm text-green-800">
+                        Articulates a single, specific, urgent business problem using phrases like "revenue risk," 
+                        "losing customers," or "bottleneck to growth"
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-green-900 mb-2">Urgency</h4>
+                      <p className="text-sm text-green-800">
+                        Can point to clear negative consequences that will occur this quarter or half if unaddressed
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-green-900 mb-2">Mindset</h4>
+                      <p className="text-sm text-green-800">
+                        Problem-fluent and solution-agnostic. Trusts you to recommend the right approach
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-green-900 mb-2">Action</h4>
+                      <p className="text-sm text-green-800">
+                        Personally commits to clear next steps on the call with authority to greenlight a pilot
+                      </p>
+                    </div>
+                    
+                    <div className="bg-green-100 p-3 rounded-lg">
+                      <p className="text-xs text-green-900 font-medium">
+                        Key Signal: When you tell a relevant story, they immediately interrupt to relate it to their bigger problem
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Losing Prospect Profile */}
+              <Card className={`${shadows.cardEffect} border-2 border-red-300 bg-gradient-to-br from-red-50 to-orange-50`}>
+                <CardHeader>
+                  <Badge className="mb-3 bg-red-600 text-white">Low Probability</Badge>
+                  <CardTitle className="text-2xl text-red-900 flex items-center gap-2">
+                    <Search className="w-6 h-6 text-red-600" />
+                    The Curious Explorer
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-red-900 mb-2">Role</h4>
+                      <p className="text-sm text-red-800">
+                        Can be a leader, but often an intermediary or manager tasked with "looking into AI"
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-red-900 mb-2">Problem</h4>
+                      <p className="text-sm text-red-800">
+                        Presents a broad list of potential improvements or general "inefficiencies" without a single priority
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-red-900 mb-2">Urgency</h4>
+                      <p className="text-sm text-red-800">
+                        Pain is chronic but not acute. Focused on being "better" or "more efficient" with no immediate driver
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-red-900 mb-2">Mindset</h4>
+                      <p className="text-sm text-red-800">
+                        Solution-focused, asking "can AI do X?" and getting stuck on technical features vs business outcomes
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-red-900 mb-2">Action</h4>
+                      <p className="text-sm text-red-800">
+                        Non-committal, suggesting more meetings to explore ideas or delegating next steps to subordinates
+                      </p>
+                    </div>
+                    
+                    <div className="bg-red-100 p-3 rounded-lg">
+                      <p className="text-xs text-red-900 font-medium">
+                        Key Signal: When you tell a story, they ask about the technology instead of connecting it to their pain
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Qualification & Red Flags */}
       <section className={`${spacing.section.md} bg-gray-50`}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-primary mb-12 text-center">
-              Qualification & Red Flags
+              Advanced Qualification Techniques
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -1011,37 +1567,37 @@ Draw a line from our potential solution to financial outcomes
                     <li className="flex items-start gap-2">
                       <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
                       <div>
-                        <strong>No specific pain point:</strong> "We just want to explore AI"
+                        <strong>Laundry list problems:</strong> Multiple unconnected pain points
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
                       <div>
-                        <strong>No budget authority:</strong> "I need to check with my boss"
+                        <strong>Solution shopping:</strong> "Can your AI do X, Y, Z?"
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
                       <div>
-                        <strong>Comparison shopping:</strong> "We're talking to 10 vendors"
+                        <strong>Delegates follow-up:</strong> "I'll have my team reach out"
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
                       <div>
-                        <strong>No urgency:</strong> "Maybe next year"
+                        <strong>Technical fixation:</strong> Gets stuck on HOW vs WHAT
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
                       <div>
-                        <strong>Wants free consulting:</strong> Multiple "quick questions" emails
+                        <strong>No quantification:</strong> Can't articulate financial impact
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
                       <div>
-                        <strong>Past payment issues:</strong> "Can we do net 90?"
+                        <strong>Vitamin problems:</strong> "Would be nice to improve"
                       </div>
                     </li>
                   </ul>
@@ -1060,37 +1616,37 @@ Draw a line from our potential solution to financial outcomes
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 mt-0.5" />
                       <div>
-                        <strong>Specific, quantified pain:</strong> "We waste 20 hours/week on X"
+                        <strong>Single burning issue:</strong> One critical problem to solve
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 mt-0.5" />
                       <div>
-                        <strong>Decision maker present:</strong> CEO/VP directly engaged
+                        <strong>Revenue impact:</strong> "This is our biggest revenue risk"
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 mt-0.5" />
                       <div>
-                        <strong>Budget allocated:</strong> "We have $X set aside for this"
+                        <strong>Pattern matching:</strong> Relates your story to their problem
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 mt-0.5" />
                       <div>
-                        <strong>Clear timeline:</strong> "We need this solved by Q2"
+                        <strong>Personal urgency:</strong> Decision maker feels the pain
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 mt-0.5" />
                       <div>
-                        <strong>Past success with consultants:</strong> Track record of investing
+                        <strong>Quick convergence:</strong> Rapidly narrows to specific solution
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 mt-0.5" />
                       <div>
-                        <strong>Prepared for call:</strong> Completed intake, shared context
+                        <strong>Immediate commitment:</strong> Books next step on the call
                       </div>
                     </li>
                   </ul>
@@ -1098,37 +1654,112 @@ Draw a line from our potential solution to financial outcomes
               </Card>
             </div>
 
+            {/* Advanced Qualification Questions */}
+            <Card className={`${shadows.cardEffect} border-2 border-primary/20 mb-8`}>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MessageSquare className="w-5 h-5 text-primary" />
+                  Power Questions for Qualification
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold mb-3">Questions to Force Prioritization</h4>
+                    <div className="space-y-3">
+                      <div className="border-l-4 border-primary pl-4">
+                        <p className="text-sm italic text-gray-700">
+                          "Of all the things you mentioned, which one is causing the most tangible pain right now?"
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-primary pl-4">
+                        <p className="text-sm italic text-gray-700">
+                          "If we could only solve one of these in the next 90 days, which would have the biggest impact on your key business goals?"
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-primary pl-4">
+                        <p className="text-sm italic text-gray-700">
+                          "What happens if none of these get addressed in the next six months?"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-3">Questions to Reframe Efficiency as Opportunity</h4>
+                    <div className="space-y-3">
+                      <div className="border-l-4 border-green-500 pl-4">
+                        <p className="text-sm italic text-gray-700">
+                          "If your top performers got 10 hours back each week, what high-value activities could they focus on?"
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-green-500 pl-4">
+                        <p className="text-sm italic text-gray-700">
+                          "What revenue opportunities are you missing because your team is stuck in manual processes?"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-3">Questions to Sidestep Solution Shoppers</h4>
+                    <div className="space-y-3">
+                      <div className="border-l-4 border-orange-500 pl-4">
+                        <p className="text-sm italic text-gray-700">
+                          "Setting the technology aside for a moment, if we could save your team X hours per week, what would the value of that be?"
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-orange-500 pl-4">
+                        <p className="text-sm italic text-gray-700">
+                          "Before we talk about HOW, help me understand WHAT success looks like for you in 3 months?"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card className={`${shadows.cardEffect} ${gradients.primaryLight}`}>
               <CardHeader>
-                <CardTitle>Early Disqualification Scripts</CardTitle>
+                <CardTitle>Updated Disqualification Scripts</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="p-4 bg-white rounded-lg">
-                    <p className="font-semibold text-sm mb-2">For the Tire Kicker:</p>
+                    <p className="font-semibold text-sm mb-2">For the Explorer (Multiple Problems, No Priority):</p>
                     <p className="text-sm italic text-gray-700">
-                      "It sounds like you're in early exploration mode. I've created a free resource - 
-                      the AI Readiness Assessment - that will help you identify if and where AI makes sense 
-                      for your business. Once you find a specific bottleneck costing over $50K annually, 
-                      let's reconnect."
+                      "You've mentioned several areas for improvement, which tells me you're in exploration mode. 
+                      I recommend identifying your single biggest bottleneck - the one costing you the most money right now. 
+                      Once you can point to a specific problem losing over $50K annually, let's reconnect and I can show you 
+                      exactly how to solve it."
                     </p>
                   </div>
                   
                   <div className="p-4 bg-white rounded-lg">
-                    <p className="font-semibold text-sm mb-2">For the Budget-Less:</p>
+                    <p className="font-semibold text-sm mb-2">For the Solution Shopper (Technology Focused):</p>
                     <p className="text-sm italic text-gray-700">
-                      "Based on what you've shared, the solution would require about $X investment. 
-                      It sounds like that's not in the cards right now. Here's what you can do yourself 
-                      in the meantime... When budget becomes available, I'm happy to help accelerate your progress."
+                      "I can see you're focused on the technical capabilities, but what I've found is that technology 
+                      is only 20% of the solution. The real value comes from reimagining the process itself. 
+                      When you're ready to focus on the business outcome rather than the specific tools, I'd be happy to help."
                     </p>
                   </div>
                   
                   <div className="p-4 bg-white rounded-lg">
-                    <p className="font-semibold text-sm mb-2">For the Wrong Fit:</p>
+                    <p className="font-semibold text-sm mb-2">For the Delegator (Not the Decision Maker):</p>
                     <p className="text-sm italic text-gray-700">
-                      "I specialize in AI-powered process transformation for workflows losing over $50K annually. 
-                      Your challenge sounds more like a pure software development need. 
-                      Let me introduce you to [Name] who specializes in exactly what you're looking for."
+                      "It sounds like the real decision needs to be made at a higher level. I've found these transformations 
+                      only succeed when the person feeling the pain is directly involved. Would it make sense to schedule 
+                      a brief call with [decision maker] to ensure we're solving the right problem?"
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <p className="font-semibold text-sm mb-2">For the Vitamin Seeker (No Urgency):</p>
+                    <p className="text-sm italic text-gray-700">
+                      "Based on what you've shared, this sounds like a 'nice to have' rather than a 'must solve now.' 
+                      In my experience, these projects rarely get the resources and attention they need to succeed. 
+                      When this becomes a burning priority that's costing you real money, I'd love to help you solve it."
                     </p>
                   </div>
                 </div>
