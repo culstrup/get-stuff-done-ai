@@ -7,7 +7,7 @@ export const BasicMeta: React.FC = () => {
     <Helmet>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Get Stuff Done with AI | AI Consulting & Implementation Services</title>
+      <title>Get Stuff Done with AI | GSD at Work - AI Consulting & Implementation Services</title>
       
       {/* Primary Meta Tags */}
       <meta name="description" content="Expert AI consulting and implementation services to accelerate your business. From solopreneurs to enterprises, we help you harness AI's potential with proven strategies." />

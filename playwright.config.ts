@@ -14,7 +14,7 @@ export default defineConfig({
   },
   use: {
     // Use local dev server for development, allow override via BASE_URL
-    baseURL: process.env.BASE_URL || 'http://localhost:5173',
+    baseURL: process.env.BASE_URL || 'http://localhost:8080',
     // Timeout configuration for CI vs local
     actionTimeout: process.env.CI ? 45000 : 30000, // 45s for CI actions
     navigationTimeout: process.env.CI ? 60000 : 30000, // 60s for CI navigation
@@ -46,7 +46,7 @@ export default defineConfig({
   // Start dev server for local development (not in CI)
   webServer: process.env.CI ? undefined : {
     command: 'npm run dev',
-    url: 'http://localhost:5173',
+    url: 'http://localhost:8080',
     reuseExistingServer: true,
     timeout: 120 * 1000,
   },

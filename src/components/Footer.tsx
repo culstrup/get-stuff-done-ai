@@ -1,6 +1,6 @@
 
 import React from "react";
-import { MessageSquare, Linkedin } from "lucide-react";
+import { MessageSquare, Linkedin, Github } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -31,6 +31,16 @@ export const Footer = () => {
           >
             <Linkedin className="h-4 w-4" />
             <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com/culstrup/get-stuff-done-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary-light transition-colors flex items-center gap-1"
+            aria-label="View the Get Stuff Done AI source code on GitHub"
+          >
+            <Github className="h-4 w-4" />
+            <span>Open Source</span>
           </a>
         </div>
       </div>
