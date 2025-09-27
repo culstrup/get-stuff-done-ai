@@ -196,6 +196,19 @@ export const DesktopNavigation = () => {
                 </li>
                 <li>
                   <NavigationMenuLink asChild>
+                    <Link
+                      to="/ledger"
+                      className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
+                    >
+                      <div className="text-sm font-medium leading-none">Ledger of Compelling Facts</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                        Timeline of capital inflows and supporting evidence
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+                <li>
+                  <NavigationMenuLink asChild>
                     <Link to="/methodology"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >

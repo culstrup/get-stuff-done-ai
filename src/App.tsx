@@ -37,6 +37,7 @@ const SalesDiscovery = lazy(() => import("./pages/methodology/SalesDiscovery"));
 const ActionWorkshop = lazy(() => import("./pages/methodology/ActionWorkshop"));
 const AIOracle = lazy(() => import("./pages/methodology/AIOracle"));
 const AssociateProgram = lazy(() => import("./pages/AssociateProgram"));
+const Ledger = lazy(() => import("./pages/Ledger"));
 
 const queryClient = new QueryClient();
 
@@ -78,6 +79,7 @@ const App = () => (
               <Route path="/blog/:id" element={<BlogPostPage />} />
               <Route path="/not-found" element={<NotFound />} />
               <Route path="/associate-call-confirmed" element={<AssociateCallConfirmed />} />
+              <Route path="/ledger" element={<Ledger />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

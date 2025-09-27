@@ -17,6 +17,7 @@ export const EnhancedFooter = () => {
     resources: [
       { name: "AI Tooling Report", href: "/ai-tooling-report", description: "2025 implementation guide" },
       { name: "Professional Insights", href: "/blog", description: "Expert AI implementation blog" },
+      { name: "Ledger of Compelling Facts", href: "/ledger", description: "Public proof of work" },
       { name: "Case Studies", href: "/cases", description: "Real-world success stories" },
       { name: "Free Consultation", href: "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", external: true, description: "Schedule your strategy session" },
     ],

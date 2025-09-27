@@ -67,6 +67,9 @@ export const MobileNavigation = () => {
               <Link to="/cases" className="text-lg font-medium" onClick={handleNavigate}>
                 Case Studies
               </Link>
+              <Link to="/ledger" className="text-lg font-medium" onClick={handleNavigate}>
+                Ledger of Compelling Facts
+              </Link>
               <Link to="/ai-tooling-report" className="text-lg font-medium" onClick={handleNavigate}>
                 AI Tooling Report
               </Link>
