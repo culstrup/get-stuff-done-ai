@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Phone, MessageSquare, Linkedin, ArrowRight, ExternalLink } from "lucide-react";
 import { Separator } from "./ui/separator";
+import { GSDCoinBadge } from "./GSDCoinBadge";
 
 export const EnhancedFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -156,15 +157,20 @@ export const EnhancedFooter = () => {
             {/* Social Links */}
             <div>
               <h4 className="font-medium text-primary mb-3">Follow Us</h4>
-              <a
-                href="https://www.linkedin.com/in/christianulstrup/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-[#0A66C2] text-white rounded-lg hover:bg-[#0A66C2]/90 transition-colors"
-              >
-                <Linkedin className="h-4 w-4 mr-2" />
-                <span>Connect on LinkedIn</span>
-              </a>
+              <div className="space-y-2">
+                <a
+                  href="https://www.linkedin.com/in/christianulstrup/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-[#0A66C2] text-white rounded-lg hover:bg-[#0A66C2]/90 transition-colors"
+                >
+                  <Linkedin className="h-4 w-4 mr-2" />
+                  <span>Connect on LinkedIn</span>
+                </a>
+
+                {/* $GSD Coin Badge with Live Price */}
+                <GSDCoinBadge />
+              </div>
             </div>
           </div>
         </div>
