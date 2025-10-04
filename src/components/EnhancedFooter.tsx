@@ -157,14 +157,14 @@ export const EnhancedFooter = () => {
             {/* Social Links */}
             <div>
               <h4 className="font-medium text-primary mb-3">Follow Us</h4>
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <a
                   href="https://www.linkedin.com/in/christianulstrup/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-[#0A66C2] text-white rounded-lg hover:bg-[#0A66C2]/90 transition-colors"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-4 py-2 bg-[#0A66C2] text-white rounded-lg shadow-sm hover:bg-[#0A66C2]/90 transition-colors"
                 >
-                  <Linkedin className="h-4 w-4 mr-2" />
+                  <Linkedin className="h-4 w-4" />
                   <span>Connect on LinkedIn</span>
                 </a>
 
