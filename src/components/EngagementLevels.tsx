@@ -5,7 +5,7 @@ import { animations, spacing } from "@/lib/design-tokens";
 import { useBitcoinPrice, btcToUsd, formatUsd } from "@/hooks/use-bitcoin-price";
 
 export const EngagementLevels = () => {
-  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+  const { data: btcPrice, isLoading: btcLoading, error: btcError } = useBitcoinPrice();
   const quickWinBtc = 0.05;
 
   // Calculate USD equivalent
@@ -43,6 +43,11 @@ export const EngagementLevels = () => {
                 </>
               ) : (
                 <p className="text-lg font-semibold text-blue-600">₿0.05</p>
+              )}
+              {btcError && (
+                <p className="text-xs text-amber-600 mt-1">
+                  ⚠️ Unable to load current exchange rates
+                </p>
               )}
             </div>
 

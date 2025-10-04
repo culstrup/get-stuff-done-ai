@@ -20,7 +20,7 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard = ({ service }: ServiceCardProps) => {
-  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+  const { data: btcPrice, isLoading: btcLoading, error: btcError } = useBitcoinPrice();
 
   // Calculate USD equivalent if BTC price is available
   const getUsdEquivalent = (btcAmount?: number) => {
@@ -54,6 +54,11 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
             </>
           ) : (
             <p className="text-xl font-bold text-primary">{service.price.replace(/BTC/, '₿')}</p>
+          )}
+          {btcError && service.btcPrice && (
+            <p className="text-xs text-amber-600 mt-1">
+              ⚠️ Unable to load current exchange rates
+            </p>
           )}
           {service.subtext && (
             <p className="text-sm text-gray-500 mt-1">{service.subtext}</p>

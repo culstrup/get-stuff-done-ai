@@ -19,7 +19,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
   showAllServices = true,
   highlightService
 }) => {
-  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+  const { data: btcPrice, isLoading: btcLoading, error: btcError } = useBitcoinPrice();
 
   // Calculate USD equivalent
   const getUsdEquivalent = (btcAmount?: number) => {

@@ -6,8 +6,23 @@ interface BitcoinPriceResponse {
   };
 }
 
+// Refresh Bitcoin price every 5 minutes
+const BTC_PRICE_REFRESH_INTERVAL_MS = 5 * 60 * 1000;
+
 /**
- * Fetches the current Bitcoin price in USD from CoinGecko API
+ * Fetches the current Bitcoin price in USD from CoinGecko API.
+ *
+ * @throws Error if the API request fails or returns invalid data
+ *
+ * @remarks
+ * **Rate Limiting:** CoinGecko's free tier has rate limits (10-50 requests/minute).
+ * This implementation uses React Query caching to minimize API calls. Each price
+ * is cached for 5 minutes and shared across all components in the app.
+ *
+ * For production with high traffic, consider:
+ * - Using CoinGecko Pro API with an API key
+ * - Implementing server-side caching
+ * - Adding a fallback price source
  */
 const fetchBitcoinPrice = async (): Promise<number> => {
   const response = await fetch(
@@ -29,15 +44,32 @@ const fetchBitcoinPrice = async (): Promise<number> => {
 };
 
 /**
- * Hook to get current Bitcoin price in USD
- * Refetches every 5 minutes to keep price relatively current
+ * Hook to get current Bitcoin price in USD with automatic refresh.
+ *
+ * @returns React Query result with Bitcoin price data, loading, and error states
+ *
+ * @example
+ * ```tsx
+ * const { data: btcPrice, isLoading, error } = useBitcoinPrice();
+ *
+ * if (isLoading) return <Skeleton />;
+ * if (error) return <div>Showing BTC pricing only</div>;
+ *
+ * const usdPrice = btcToUsd(0.05, btcPrice);
+ * ```
+ *
+ * @remarks
+ * - Refetches every 5 minutes to keep price current
+ * - Caches results across all components (React Query)
+ * - Retries up to 3 times on failure
+ * - Returns error state for graceful fallback handling
  */
 export const useBitcoinPrice = () => {
   return useQuery({
     queryKey: ['bitcoinPrice'],
     queryFn: fetchBitcoinPrice,
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    refetchInterval: 5 * 60 * 1000, // Refetch every 5 minutes
+    staleTime: BTC_PRICE_REFRESH_INTERVAL_MS,
+    refetchInterval: BTC_PRICE_REFRESH_INTERVAL_MS,
     retry: 3,
   });
 };
