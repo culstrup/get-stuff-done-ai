@@ -3,11 +3,15 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { useBitcoinPrice, btcToUsd } from "@/hooks/use-bitcoin-price";
 
+// Fallback USD price when Bitcoin API is unavailable (based on ~$95k BTC)
+// Update this value if Bitcoin price changes significantly
+const FALLBACK_QUICK_WIN_USD = 4750;
+
 export const StructuredData: React.FC = () => {
   const { data: btcPrice } = useBitcoinPrice();
 
   // Calculate USD prices from BTC (default to approximate values if API unavailable)
-  const quickWinUsd = btcPrice ? Math.round(btcToUsd(0.05, btcPrice)) : 4750;
+  const quickWinUsd = btcPrice ? Math.round(btcToUsd(0.05, btcPrice)) : FALLBACK_QUICK_WIN_USD;
   // The structured data has been purposely split into separate blocks for better maintainability
   const professionalServiceSchema = {
     "@context": "https://schema.org",

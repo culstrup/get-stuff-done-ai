@@ -50,10 +50,18 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
           {service.btcPrice && !btcLoading && getUsdEquivalent(service.btcPrice) ? (
             <>
               <p className="text-xl font-bold text-primary">{getUsdEquivalent(service.btcPrice)}</p>
-              <p className="text-sm text-gray-600 mt-1">(₿{service.btcPrice})</p>
+              <p className="text-sm text-gray-600 mt-1">(<span aria-label="Bitcoin">₿</span>{service.btcPrice})</p>
             </>
           ) : (
-            <p className="text-xl font-bold text-primary">{service.price.replace(/BTC/, '₿')}</p>
+            <p className="text-xl font-bold text-primary">
+              {service.price.includes('BTC') ? (
+                <>
+                  {service.price.split('BTC')[0]}<span aria-label="Bitcoin">₿</span>{service.price.split('BTC')[1]}
+                </>
+              ) : (
+                service.price
+              )}
+            </p>
           )}
           {btcError && service.btcPrice && (
             <p className="text-xs text-amber-600 mt-1">

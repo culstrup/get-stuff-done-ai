@@ -9,6 +9,10 @@ interface BitcoinPriceResponse {
 // Refresh Bitcoin price every 5 minutes
 const BTC_PRICE_REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 
+// Price sanity checks to detect API errors or unrealistic data
+const MIN_REASONABLE_BTC_PRICE = 20000; // $20k - historically low
+const MAX_REASONABLE_BTC_PRICE = 500000; // $500k - generous upper bound
+
 /**
  * Fetches the current Bitcoin price in USD from CoinGecko API.
  *
@@ -40,7 +44,16 @@ const fetchBitcoinPrice = async (): Promise<number> => {
     throw new Error('Invalid Bitcoin price response structure');
   }
 
-  return data.bitcoin.usd;
+  const price = data.bitcoin.usd;
+
+  // Sanity check: ensure price is within reasonable bounds
+  if (price < MIN_REASONABLE_BTC_PRICE || price > MAX_REASONABLE_BTC_PRICE) {
+    throw new Error(
+      `Bitcoin price ${price} is outside reasonable range ($${MIN_REASONABLE_BTC_PRICE}-$${MAX_REASONABLE_BTC_PRICE}). Possible API error.`
+    );
+  }
+
+  return price;
 };
 
 /**
@@ -69,7 +82,9 @@ export const useBitcoinPrice = () => {
     queryKey: ['bitcoinPrice'],
     queryFn: fetchBitcoinPrice,
     staleTime: BTC_PRICE_REFRESH_INTERVAL_MS,
+    cacheTime: 10 * 60 * 1000, // Keep in cache for 10 minutes
     refetchInterval: BTC_PRICE_REFRESH_INTERVAL_MS,
+    refetchOnWindowFocus: false, // Prevent refetch on tab focus to reduce API calls
     retry: 3,
   });
 };
