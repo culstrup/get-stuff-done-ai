@@ -73,7 +73,7 @@ const AILegalWorkshop: React.FC = () => {
         "name": "What is the $2,500 workflow transformation shown in the replay?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In the recording, you'll see a comprehensive workflow transformation guided by expert Christian Ulstrup. This mirrors our private AI Action Workshop (valued at $2,500) where we analyze and transform a specific legal workflow using AI tools. By watching the replay, you'll gain insights into this process that you can apply to your own firm's operations."
+          "text": "In the recording, you'll see a comprehensive workflow transformation guided by expert Christian Ulstrup. This mirrors our private Quick Win in a Box workshop where we analyze and transform a specific legal workflow using AI tools. By watching the replay, you'll gain insights into this process that you can apply to your own firm's operations."
         }
       }
     ]

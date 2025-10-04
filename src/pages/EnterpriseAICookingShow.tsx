@@ -4,15 +4,22 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
-import { 
-  Clock, Users, Zap, Target, TrendingUp, 
+import {
+  Clock, Users, Zap, Target, TrendingUp,
   CheckCircle, ArrowRight, Play, Calendar,
   ChefHat, Rocket, Building2, Award,
   Timer, Sparkles, MessageSquare, FileText,
   Video, Code2, Mic, BarChart3
 } from "lucide-react";
+import { useBitcoinPrice, btcToUsd, formatUsd } from "@/hooks/use-bitcoin-price";
 
 const EnterpriseAICookingShow = () => {
+  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+  const btcAmount = 0.05;
+
+  // Calculate USD equivalent
+  const usdPrice = btcPrice ? formatUsd(btcToUsd(btcAmount, btcPrice)) : null;
+
   // Calendly links
   const cookingShowCalendlyLink = "https://calendly.com/gsdatwork/cooking-show";
 
@@ -26,7 +33,7 @@ const EnterpriseAICookingShow = () => {
     "https://gsdat.work/enterprise-ai-cooking-show",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "GSD at Work",
-    "$4,999"
+    "0.05 BTC"
   );
 
   // FAQ structured data
@@ -53,7 +60,7 @@ const EnterpriseAICookingShow = () => {
     },
     {
       question: "How much does the Enterprise AI Cooking Show cost?",
-      answer: "$4,999 for a 2-hour workshop with up to 30 participants. This includes pre-workshop discovery, the live session, all created assets, and 30-day follow-up support. Custom packages available for series or extended sessions."
+      answer: "0.05 BTC for a 2-hour workshop with up to 30 participants. This includes pre-workshop discovery, the live session, all created assets, and 30-day follow-up support. Custom packages available for series or extended sessions."
     }
   ]);
 
@@ -659,7 +666,16 @@ const EnterpriseAICookingShow = () => {
                 <div className="bg-white border-2 border-primary rounded-xl p-8">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl font-semibold">Standard Cooking Show</h3>
-                    <span className="text-3xl font-bold text-primary">$4,999</span>
+                    <div className="text-right">
+                      {usdPrice && !btcLoading ? (
+                        <>
+                          <span className="text-3xl font-bold text-primary">{usdPrice}</span>
+                          <p className="text-sm text-gray-600 mt-1">(0.05 BTC)</p>
+                        </>
+                      ) : (
+                        <span className="text-3xl font-bold text-primary">0.05 BTC</span>
+                      )}
+                    </div>
                   </div>
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-center gap-3">

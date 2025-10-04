@@ -53,7 +53,7 @@ export const MobileNavigation = () => {
                 AI Oracle Session
               </Link>
               <Link to="/ai-action-workshop" className="text-lg font-medium" onClick={handleNavigate}>
-                AI Action Workshop
+                Quick Win in a Box
               </Link>
               <Link to="/10x-executive" className="text-lg font-medium" onClick={handleNavigate}>
                 10x Executive Program

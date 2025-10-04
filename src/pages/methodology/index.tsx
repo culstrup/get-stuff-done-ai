@@ -38,7 +38,7 @@ const Methodology = () => {
       disabled: false
     },
     {
-      title: "AI Action Workshop",
+      title: "Quick Win in a Box",
       subtitle: "Core Transformation Unit",
       description: "The foundational 2-hour workshop that achieves 10x improvements. Go from 0→1 with hands-on AI transformation.",
       features: [

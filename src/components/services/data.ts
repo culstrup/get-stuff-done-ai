@@ -5,7 +5,8 @@ export const services: ServiceType[] = [
   {
     title: "Enterprise AI Cooking Show",
     description: "High-energy, live AI transformation demonstration that gets your team excited about what's possible with AI",
-    price: "$4,999",
+    price: "0.05 BTC",
+    btcPrice: 0.05,
     subtext: "Premium workshop experience",
     extraText: "Perfect for enterprises and mastermind groups. Watch real transformations happen live, participate in hands-on demonstrations, and leave with the excitement and knowledge to kickstart your AI journey.",
     features: [
@@ -23,7 +24,8 @@ export const services: ServiceType[] = [
   {
     title: "AI Oracle Session",
     description: "Transform executive decision-making with AI-powered organizational insights that integrate into your leadership cadence",
-    price: "$2,499 per session",
+    price: "0.05 BTC per session",
+    btcPrice: 0.05,
     subtext: "Executive Intelligence System",
     extraText: "See what others miss. AI Oracle provides C-suite teams with strategic foresight, identifies hidden risks and opportunities, and becomes an ongoing participant in executive decision-making.",
     features: [
@@ -39,21 +41,23 @@ export const services: ServiceType[] = [
     learnMoreLink: "/ai-oracle-session",
   },
   {
-    title: "AI Action Workshop",
-    description: "Quick win in a box: Transform what takes days or weeks into hours. Break your four-minute mile with AI and gain the know-how to replicate success across your organization",
-    price: "$4,999 per session",
-    subtext: "Associate-led workshops also available - pricing varies",
-    extraText: "100-2000% efficiency gain for targeted tasks. Participants develop transferable SOPs, reduce cycle times, and maintain significantly higher energy levels throughout the workday.",
+    title: "Quick Win in a Box",
+    description: "Get to your outcome by a negotiated time. No more than 3 hours of sponsor team time required. Everything from accelerated contract review to massively faster hiring, financial analysis, GTM prospecting, software development, and analysis of massive unstructured datasets.",
+    price: "0.05 BTC per session",
+    btcPrice: 0.05,
+    subtext: "Performance-based: 50% upfront, 50% upon verified success. Bundle discounts available.",
+    extraText: "100-2000% efficiency gain for targeted tasks. We negotiate the outcome beforehand, figure out the scope, and get there in a live working session (90-120 min typically). You'll develop transferable SOPs, reduce cycle times 10x faster, and maintain significantly higher energy levels throughout the workday.",
     pricingTiers: [
       {
-        label: 'Founder-Led Workshop',
-        price: '$4,999',
+        label: 'Founder-Led Session',
+        price: '0.05 BTC',
+        btcPrice: 0.05,
         description: 'Led by Christian Ulstrup',
         availability: 'Limited availability',
         calendlyLink: 'https://calendly.com/gsdatwork/ai-workshop'
       },
       {
-        label: 'Associate-Led Workshop',
+        label: 'Associate-Led Session',
         price: 'pricing varies',
         description: 'Led by GSD Certified Associates',
         availability: 'More flexible scheduling',
@@ -66,30 +70,12 @@ export const services: ServiceType[] = [
       "Create documented processes that spread success virally",
       "Break your four-minute mile - prove what's possible with AI",
       "Includes pre-session discovery and post-session support",
+      "Performance-based: 50% upfront, 50% upon verified success"
     ],
     cta: "Learn More",
     secondaryCta: "Schedule a Consultation",
     calendlyLink: "https://calendly.com/gsdatwork/free-consult",
     learnMoreLink: "/ai-action-workshop",
-  },
-  {
-    title: "10x Effective Executive",
-    description: "A 10-week AI-powered transformation program for executives and their teams to accelerate productivity, reclaim time, and master AI tools organization-wide",
-    price: "$19,999",
-    subtext: "One-time engagement fee",
-    extraText: "Transform your organization's productivity through executive leadership. Cut email handling time by 50-80%, reclaim 10+ hours weekly for strategic work, and create scalable AI systems that benefit your entire team.",
-    features: [
-      "5 bi-weekly coaching sessions (2 hours each)",
-      "Team members welcome to join relevant sessions",
-      "Personalized AI tool stack for your organization",
-      "Cut email handling time by 50-80% across your team",
-      "Build scalable AI processes that spread success",
-      "Measurable outcomes tied to organizational results",
-    ],
-    cta: "Learn More",
-    secondaryCta: "Schedule a Consultation",
-    calendlyLink: "https://calendly.com/gsdatwork/10x-executive-consult",
-    learnMoreLink: "/10x-executive",
   },
   {
     title: "AI Automation & Custom Integration",
@@ -113,15 +99,18 @@ export const services: ServiceType[] = [
   {
     title: "Triple-A Transformation Program",
     description: "14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption)",
-    price: "Starts at $150,000 for 100+ person organizations",
-    subtext: "Includes performance-based incentives and scales with org size",
-    extraText: "Organization-wide efficiency gains leading to significant cost reduction, accelerated growth in new markets, greater velocity in delivering offerings, and elevated employee energy levels across teams.",
+    price: "Starts at 1 BTC for 100+ person organizations",
+    btcPrice: 1.0,
+    subtext: "Includes performance-based incentives - Pay full upfront OR share 10-20¢ per EBITDA dollar created",
+    extraText: "Organization-wide efficiency gains leading to significant cost reduction, accelerated growth in new markets, greater velocity in delivering offerings, and elevated employee energy levels across teams. Performance incentives based on CFO-signed 1-year EBITDA with time/certainty discounts. For forward-thinking clients, we can structure prediction markets (see arlofs.pro) to incentivize employee participation in transformation.",
     features: [
       "Fractional Chief AI Officer services",
       "Comprehensive AI opportunity assessment",
       "Custom implementation roadmap",
       "Team training and change management",
       "ROI-focused metrics and tracking",
+      "Performance-based: Full BTC upfront OR 10-20¢/$1 EBITDA created",
+      "Optional: Prediction market incentives for employee engagement"
     ],
     cta: "Learn More",
     secondaryCta: "Schedule a Strategy Call",

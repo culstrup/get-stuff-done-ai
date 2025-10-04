@@ -29,8 +29,8 @@ const AIAutomationIntegration = () => {
       answer: "This service helps organizations scale from isolated AI wins (0→1 with workshops) to systematic automation (10→100 or even 1→100). We deploy AI workflows, voice agents, custom MCP connectors, and full-stack automation solutions to achieve order-of-magnitude improvements in your business processes."
     },
     {
-      question: "What's the difference between this and the AI Action Workshop?",
-      answer: "AI Action Workshops take you from 0→1 or 1→10 by creating SOPs and custom GPTs. This service goes further, implementing hardcore automation, custom integrations, and enterprise-grade solutions to scale across large organizations or achieve full-blown automation."
+      question: "What's the difference between this and Quick Win in a Box?",
+      answer: "Quick Win in a Box takes you from 0→1 or 1→10 by creating SOPs and custom GPTs. This service goes further, implementing hardcore automation, custom integrations, and enterprise-grade solutions to scale across large organizations or achieve full-blown automation."
     },
     {
       question: "What technologies do you work with?",
@@ -112,7 +112,7 @@ const AIAutomationIntegration = () => {
                 {program.title}
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-                You've gone 0→1 with an AI Action Workshop. Maybe 1→10 with SOPs and custom GPTs. 
+                You've gone 0→1 with Quick Win in a Box. Maybe 1→10 with SOPs and custom GPTs.
                 Now it's time for hardcore automation to scale 10→100 or even 1→100.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

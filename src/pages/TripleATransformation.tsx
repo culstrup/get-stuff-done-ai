@@ -7,9 +7,14 @@ import { ServiceFeaturesList } from "@/components/services/ServiceFeaturesList";
 import { services, valueMetrics } from "@/components/services/data";
 import { SEOHead } from "@/components/SEOHead";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
+import { useBitcoinPrice, btcToUsd, formatUsd } from "@/hooks/use-bitcoin-price";
 
 const TripleATransformation = () => {
   const program = services.find(s => s.title === "Triple-A Transformation Program");
+  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+
+  // Calculate USD equivalent for 1 BTC
+  const usdPrice = btcPrice ? formatUsd(btcToUsd(1.0, btcPrice)) : null;
   
   if (!program) return null;
 
@@ -85,7 +90,14 @@ const TripleATransformation = () => {
               
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h2 className="text-2xl font-semibold text-primary mb-4">Investment</h2>
-                <p className="text-3xl font-bold text-secondary mb-2">{program.price}</p>
+                {usdPrice && !btcLoading ? (
+                  <>
+                    <p className="text-3xl font-bold text-secondary mb-1">Starts at {usdPrice}</p>
+                    <p className="text-sm text-gray-600 mb-2">(1 BTC for 100+ person organizations)</p>
+                  </>
+                ) : (
+                  <p className="text-3xl font-bold text-secondary mb-2">{program.price}</p>
+                )}
                 <p className="text-gray-600 mb-6">{program.subtext}</p>
                 
                 <div className="space-y-4">

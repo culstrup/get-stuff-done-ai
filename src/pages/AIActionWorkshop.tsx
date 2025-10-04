@@ -11,9 +11,15 @@ import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { ServiceRecommendation } from "@/components/internal-linking/ServiceRecommendation";
 import { animations, shadows, typography, gradients, buttonStyles, layouts, borderRadius } from "@/lib/design-tokens";
+import { useBitcoinPrice, btcToUsd, formatUsd } from "@/hooks/use-bitcoin-price";
 
 const AIActionWorkshop = () => {
-  const workshop = services.find(s => s.title === "AI Action Workshop");
+  const workshop = services.find(s => s.title === "Quick Win in a Box");
+  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+  const btcAmount = 0.05;
+
+  // Calculate USD equivalent
+  const usdPrice = btcPrice ? formatUsd(btcToUsd(btcAmount, btcPrice)) : null;
   
   if (!workshop) return null;
   
@@ -30,14 +36,14 @@ const AIActionWorkshop = () => {
     "https://gsdat.work/ai-action-workshop",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "GSD at Work",
-    "$4,999"
+    "0.05 BTC"
   );
 
   // Enhanced FAQ structured data with more comprehensive answers
   const faqStructuredData = generateFAQStructuredData([
     {
-      question: "What is the AI Action Workshop?",
-      answer: "The AI Action Workshop is your quick win in a box - a hands-on session where you'll break your four-minute mile with AI. Transform tasks that take days or weeks into victories achieved in hours, while gaining the know-how to replicate this success across your organization."
+      question: "What is the Quick Win in a Box?",
+      answer: "Quick Win in a Box is your outcome-based engagement - a hands-on session where you'll break your four-minute mile with AI. Transform tasks that take days or weeks into victories achieved in hours, while gaining the know-how to replicate this success across your organization. You get to your outcome by a negotiated time with no more than 3 hours of sponsor team time required."
     },
     {
       question: "Who should attend the AI Action Workshop?",
@@ -52,8 +58,8 @@ const AIActionWorkshop = () => {
       answer: "Participants typically achieve 100-2000% efficiency gains for targeted tasks. You'll develop transferable SOPs, reduce cycle times, and maintain higher energy levels throughout your workday by eliminating tedious tasks."
     },
     {
-      question: "How much does the AI Action Workshop cost?",
-      answer: "The AI Action Workshop is $4,999 for a Founder-led workshop with Christian Ulstrup. We also offer Associate-led workshops with our GSD Certified Associates at competitive rates - perfect for organizations needing flexible scheduling or multiple workshops. Both deliver the same transformative results and satisfaction guarantee."
+      question: "How much does the Quick Win in a Box cost?",
+      answer: "Quick Win in a Box is 0.05 BTC for a Founder-led session with Christian Ulstrup. We also offer Associate-led sessions with our GSD Certified Associates at competitive rates. Bundle pricing available: 5-pack with 20% off, or 10-pack with 30% off (50% upfront, 50% upon verified quick win achievement). Both deliver the same transformative results and satisfaction guarantee."
     },
     {
       question: "How does the workshop process work?",
@@ -69,7 +75,7 @@ const AIActionWorkshop = () => {
     <div className="min-h-screen bg-background">
       <KeywordOptimizedSEO 
         title="AI Action Workshop | GSD at Work - Get Stuff Done with AI"
-        content="GSD at Work's AI Action Workshop ($4,999): Break your four-minute mile with AI. Transform tasks that take days into victories achieved in hours. Founder-led workshops with hands-on implementation and immediate results."
+        content="GSD at Work's Quick Win in a Box (0.05 BTC): Break your four-minute mile with AI. Transform tasks that take days into victories achieved in hours. Founder-led sessions with hands-on implementation and immediate results. Bundle discounts available."
         canonicalUrl="https://gsdat.work/ai-action-workshop"
         pageType="service"
         structuredData={[serviceStructuredData, faqStructuredData]}
@@ -94,7 +100,7 @@ const AIActionWorkshop = () => {
                 </Badge>
                 
                 <h1 className={`${typography.fluid.h1} text-primary mb-6 leading-tight`}>
-                  AI Action Workshop
+                  Quick Win in a Box
                   <span className="block text-secondary mt-2">Your Four-Minute Mile Moment</span>
                 </h1>
                 
@@ -130,9 +136,9 @@ const AIActionWorkshop = () => {
                     onClick={() => window.open('https://calendly.com/gsdatwork/ai-workshop', '_blank')}
                   >
                     <Calendar className="h-5 w-5 mr-2" />
-                    Book Your Workshop
+                    Book Your Session
                     <span className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-xs font-bold px-2 py-1 rounded-full text-white shadow-lg">
-                      $4,999
+                      {usdPrice || "0.05 BTC"}
                     </span>
                   </Button>
                   
@@ -336,18 +342,30 @@ const AIActionWorkshop = () => {
                 <h2 className={`${typography.fluid.h2} text-primary mb-8`}>
                   Investment & Availability
                 </h2>
-                
-                {/* Founder-Led Workshop */}
+
+                {/* Founder-Led Session */}
                 <Card className={`relative overflow-hidden border-2 border-secondary/50 ${shadows.floating} ${animations.breathingGlow}`}>
                   <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-center py-2 text-sm font-bold">
                     🔥 Most Popular
                   </div>
                   <CardHeader className="pt-12 pb-6">
-                    <CardTitle className="text-xl font-bold text-gray-900">Founder-Led Workshop</CardTitle>
+                    <CardTitle className="text-xl font-bold text-gray-900">Founder-Led Session</CardTitle>
                     <p className="text-gray-600">Led by Christian Ulstrup</p>
-                    <div className="flex items-baseline gap-2 mt-4">
-                      <span className="text-4xl font-bold text-secondary">$4,999</span>
-                      <span className="text-gray-500">one-time</span>
+                    <div className="flex flex-col gap-1 mt-4">
+                      {usdPrice && !btcLoading ? (
+                        <>
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-4xl font-bold text-secondary">{usdPrice}</span>
+                            <span className="text-gray-500">one-time</span>
+                          </div>
+                          <span className="text-sm text-gray-600">(0.05 BTC)</span>
+                        </>
+                      ) : (
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-4xl font-bold text-secondary">0.05 BTC</span>
+                          <span className="text-gray-500">one-time</span>
+                        </div>
+                      )}
                     </div>
                     <Badge variant="outline" className="w-fit mt-2 text-orange-600 border-orange-200">
                       Limited availability
@@ -363,18 +381,18 @@ const AIActionWorkshop = () => {
                       }}
                     >
                       <Calendar className="h-5 w-5 mr-2" />
-                      Book Workshop Now
+                      Book Session Now
                     </Button>
                   </CardContent>
                 </Card>
-                
-                {/* Associate-Led Workshop */}
+
+                {/* Associate-Led Session */}
                 <Card className={`border-2 border-blue-200 ${shadows.floating} hover:shadow-xl transition-all duration-300`}>
                   <CardHeader>
-                    <CardTitle className="text-xl font-bold text-gray-900">Associate-Led Workshops</CardTitle>
+                    <CardTitle className="text-xl font-bold text-gray-900">Associate-Led Sessions</CardTitle>
                     <p className="text-gray-600 text-sm">
-                      Led by our GSD Certified Associates—hand-picked and trained by Christian to deliver 
-                      the exact same transformative workshop experience.
+                      Led by our GSD Certified Associates—hand-picked and trained by Christian to deliver
+                      the exact same transformative session experience.
                     </p>
                     <div className="mt-4">
                       <div className="text-2xl font-bold text-blue-600 mb-2">Competitive Rates</div>
@@ -430,11 +448,18 @@ const AIActionWorkshop = () => {
                     <div className="flex items-start gap-3">
                       <Target className="h-6 w-6 text-blue-600 mt-1" />
                       <div>
-                        <h4 className="font-bold text-blue-900 mb-2">🎯 Volume Discounts Available</h4>
-                        <p className="text-blue-800 text-sm">
-                          Planning multiple workshops? Bundle pricing available starting at 10 workshops. 
-                          Ask about our organizational transformation packages.
-                        </p>
+                        <h4 className="font-bold text-blue-900 mb-2">🎯 Bundle Pricing Available</h4>
+                        <div className="space-y-2">
+                          <div className="text-blue-800 text-sm">
+                            <strong>5-Pack Bundle:</strong> 20% off (50% upfront, 50% upon verified quick win achievement)
+                          </div>
+                          <div className="text-blue-800 text-sm">
+                            <strong>10-Pack Bundle:</strong> 30% off (50% upfront, 50% upon verified quick win achievement)
+                          </div>
+                          <p className="text-blue-700 text-xs mt-3 italic">
+                            Perfect for organizations needing multiple Quick Wins across different teams or departments.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </Card>

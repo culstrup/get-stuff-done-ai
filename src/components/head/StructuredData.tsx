@@ -1,8 +1,17 @@
 
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { useBitcoinPrice, btcToUsd } from "@/hooks/use-bitcoin-price";
+
+// Fallback USD price when Bitcoin API is unavailable (based on ~$95k BTC)
+// Update this value if Bitcoin price changes significantly
+const FALLBACK_QUICK_WIN_USD = 4750;
 
 export const StructuredData: React.FC = () => {
+  const { data: btcPrice } = useBitcoinPrice();
+
+  // Calculate USD prices from BTC (default to approximate values if API unavailable)
+  const quickWinUsd = btcPrice ? Math.round(btcToUsd(0.05, btcPrice)) : FALLBACK_QUICK_WIN_USD;
   // The structured data has been purposely split into separate blocks for better maintainability
   const professionalServiceSchema = {
     "@context": "https://schema.org",
@@ -59,16 +68,16 @@ export const StructuredData: React.FC = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "2-Hour AI Action Workshop",
+            "name": "Quick Win in a Box",
             "url": "https://gsdat.work/ai-action-workshop",
             "description": "Hands-on working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution.",
             "offers": {
               "@type": "Offer",
-              "price": "2499",
+              "price": quickWinUsd.toString(),
               "priceCurrency": "USD",
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "2499",
+                "price": quickWinUsd.toString(),
                 "priceCurrency": "USD",
                 "valueAddedTaxIncluded": "true"
               }
@@ -217,15 +226,15 @@ export const StructuredData: React.FC = () => {
         "name": "What AI implementation services does Get Stuff Done AI offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Get Stuff Done AI offers three main service lines: 1) 2-Hour AI Action Workshops for hands-on implementation, 2) The 10x Effective Executive program for leaders seeking AI-powered productivity gains, and 3) The Triple-A Transformation Program for comprehensive organizational AI implementation."
+          "text": "Get Stuff Done AI offers three main service lines: 1) Quick Win in a Box for hands-on implementation, 2) The 10x Effective Executive program for leaders seeking AI-powered productivity gains, and 3) The Triple-A Transformation Program for comprehensive organizational AI implementation."
         }
       },
       {
         "@type": "Question",
-        "name": "How does the 2-Hour AI Action Workshop work?",
+        "name": "How does Quick Win in a Box work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The 2-Hour AI Action Workshop is a focused, hands-on session where you'll implement real AI solutions to your specific business challenges. Unlike theoretical discussions, this workshop focuses on pure execution with concrete results you can see by the end of the session. You'll leave with working implementations and repeatable processes."
+          "text": "Quick Win in a Box is a focused, hands-on session where you'll implement real AI solutions to your specific business challenges. Unlike theoretical discussions, this workshop focuses on pure execution with concrete results you can see by the end of the session. You'll leave with working implementations and repeatable processes."
         }
       },
       {

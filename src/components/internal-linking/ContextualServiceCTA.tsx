@@ -56,10 +56,10 @@ export const ContextualServiceCTA: React.FC<ContextualServiceCTAProps> = ({
     },
     {
       id: "ai-action-workshop",
-      title: "AI Action Workshop",
+      title: "Quick Win in a Box",
       description: "Transform your ideas into immediate results with hands-on AI implementation",
       link: "/ai-action-workshop",
-      price: "$2,499",
+      price: "0.05 BTC",
       icon: <Zap className="h-6 w-6" />,
       keywords: ["implementation", "practical", "hands-on", "execute", "action", "immediate", "workflow", "process", "tools", "automation"],
       cta: "Get Hands-On Implementation",
