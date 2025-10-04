@@ -110,7 +110,7 @@ export const GSDCoinBadge = () => {
       href={PUMP_FUN_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex flex-col gap-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white ${borderRadius.lg} hover:from-purple-700 hover:to-pink-700 ${animations.transition} ${shadows.buttonEffect} group`}
+      className={`inline-flex w-full sm:w-auto flex-col gap-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-left ${borderRadius.lg} hover:from-purple-700 hover:to-pink-700 ${animations.transition} ${shadows.buttonEffect} group`}
       title="Watch me code live & join the $GSD community"
       aria-label="View $GSD Coin on Pump.fun"
     >
