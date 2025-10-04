@@ -28,12 +28,25 @@ interface TokenPrice {
 const MINT_ADDRESS = "DwEsTivDimbExt2z6SxDoJAuTJX3F23frK5cHAQHpump";
 const PUMP_FUN_URL = `https://pump.fun/coin/${MINT_ADDRESS}`;
 
+const fetchWithTimeout = async (url: string, timeout = 5000): Promise<Response> => {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeoutId);
+    return response;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    throw error;
+  }
+};
+
 const fetchGSDPrice = async (): Promise<TokenPrice> => {
   // Try Jupiter aggregator API first
   try {
-    const jupiterResponse = await fetch(
-      `https://price.jup.ag/v6/price?ids=${MINT_ADDRESS}`,
-      { signal: AbortSignal.timeout(5000) }
+    const jupiterResponse = await fetchWithTimeout(
+      `https://price.jup.ag/v6/price?ids=${MINT_ADDRESS}`
     );
 
     if (jupiterResponse.ok) {
@@ -47,14 +60,15 @@ const fetchGSDPrice = async (): Promise<TokenPrice> => {
       }
     }
   } catch (error) {
-    console.error("Jupiter API error:", error);
+    if (import.meta.env.DEV) {
+      console.error("Jupiter API error:", error);
+    }
   }
 
   // Fallback to DexScreener
   try {
-    const dexResponse = await fetch(
-      `https://api.dexscreener.com/latest/dex/tokens/${MINT_ADDRESS}`,
-      { signal: AbortSignal.timeout(5000) }
+    const dexResponse = await fetchWithTimeout(
+      `https://api.dexscreener.com/latest/dex/tokens/${MINT_ADDRESS}`
     );
 
     if (dexResponse.ok) {
@@ -68,7 +82,9 @@ const fetchGSDPrice = async (): Promise<TokenPrice> => {
       }
     }
   } catch (error) {
-    console.error("DexScreener API error:", error);
+    if (import.meta.env.DEV) {
+      console.error("DexScreener API error:", error);
+    }
   }
 
   throw new Error("Unable to fetch $GSD price from any source");
