@@ -3,8 +3,8 @@ import { services, valueMetrics } from './data'
 import { ServiceType } from './types'
 
 describe('services data', () => {
-  it('contains exactly 6 services', () => {
-    expect(services).toHaveLength(6)
+  it('contains exactly 5 services', () => {
+    expect(services).toHaveLength(5)
   })
 
   it('all services have required fields', () => {
@@ -51,16 +51,16 @@ describe('services data', () => {
 
   it('service prices follow expected patterns', () => {
     services.forEach((service) => {
-      // Allow both dollar amounts and "Custom Pricing"
-      expect(service.price).toMatch(/(\$[\d,]+|Custom Pricing)/)
+      // Allow dollar amounts, BTC pricing, and "Custom Pricing"
+      expect(service.price).toMatch(/(\$[\d,]+|Custom Pricing|[\d.]+\s*BTC|Starts at)/)
     })
   })
 
   it('all services have at least 5 features', () => {
     services.forEach((service) => {
       expect(service.features.length).toBeGreaterThanOrEqual(5)
-      // 10x Executive has 6 features due to team participation feature
-      expect(service.features.length).toBeLessThanOrEqual(6)
+      // Quick Win in a Box and Triple A have 6-7 features
+      expect(service.features.length).toBeLessThanOrEqual(7)
       service.features.forEach((feature) => {
         expect(typeof feature).toBe('string')
         expect(feature.length).toBeGreaterThan(0)
@@ -70,37 +70,38 @@ describe('services data', () => {
 
   it('contains expected workshop services', () => {
     const workshopTitles = services
-      .filter(s => s.title.includes('Workshop') || s.title.includes('Session') || s.title.includes('Show'))
+      .filter(s => s.title.includes('Workshop') || s.title.includes('Session') || s.title.includes('Show') || s.title.includes('Box'))
       .map(s => s.title)
 
     expect(workshopTitles).toContain('AI Oracle Session')
-    expect(workshopTitles).toContain('AI Action Workshop')
+    expect(workshopTitles).toContain('Quick Win in a Box')
     expect(workshopTitles).toContain('Enterprise AI Cooking Show')
     expect(workshopTitles).toHaveLength(3)
   })
 
   it('contains expected program services', () => {
     const programTitles = services
-      .filter(s => s.title.includes('Program') || s.title.includes('Executive') || s.title.includes('Integration'))
+      .filter(s => s.title.includes('Program') || s.title.includes('Integration'))
       .map(s => s.title)
-    
-    expect(programTitles).toContain('10x Effective Executive')
+
     expect(programTitles).toContain('AI Automation & Custom Integration')
     expect(programTitles).toContain('Triple-A Transformation Program')
-    expect(programTitles).toHaveLength(3)
+    expect(programTitles).toHaveLength(2)
   })
 
   it('workshops have appropriate pricing', () => {
-    const workshops = services.filter(s => s.title.includes('Workshop') || s.title.includes('Session') || s.title.includes('Show'))
+    const workshops = services.filter(s => s.title.includes('Workshop') || s.title.includes('Session') || s.title.includes('Show') || s.title.includes('Box'))
     workshops.forEach((workshop) => {
-      if (workshop.title === 'AI Action Workshop') {
-        expect(workshop.price).toBe('$4,999 per session')
-        expect(workshop.subtext).toBe('Associate-led workshops also available - pricing varies')
+      if (workshop.title === 'Quick Win in a Box') {
+        expect(workshop.price).toBe('0.05 BTC per session')
+        expect(workshop.btcPrice).toBe(0.05)
       } else if (workshop.title === 'AI Oracle Session') {
-        expect(workshop.price).toBe('$2,499 per session')
+        expect(workshop.price).toBe('0.05 BTC per session')
+        expect(workshop.btcPrice).toBe(0.05)
         expect(workshop.subtext).toBe('Executive Intelligence System')
       } else if (workshop.title === 'Enterprise AI Cooking Show') {
-        expect(workshop.price).toBe('$4,999')
+        expect(workshop.price).toBe('0.05 BTC')
+        expect(workshop.btcPrice).toBe(0.05)
         expect(workshop.subtext).toBe('Premium workshop experience')
       }
     })
@@ -117,8 +118,7 @@ describe('services data', () => {
     const expectedRoutes = {
       'Enterprise AI Cooking Show': '/enterprise-ai-cooking-show',
       'AI Oracle Session': '/ai-oracle-session',
-      'AI Action Workshop': '/ai-action-workshop',
-      '10x Effective Executive': '/10x-executive',
+      'Quick Win in a Box': '/ai-action-workshop',
       'AI Automation & Custom Integration': '/ai-automation-integration',
       'Triple-A Transformation Program': '/triple-a-transformation'
     }
@@ -131,9 +131,7 @@ describe('services data', () => {
   it('calendly links are valid and appropriate', () => {
     services.forEach((service) => {
       expect(service.calendlyLink).toBeDefined()
-      if (service.title === '10x Effective Executive') {
-        expect(service.calendlyLink).toBe('https://calendly.com/gsdatwork/10x-executive-consult')
-      } else if (service.title === 'AI Action Workshop') {
+      if (service.title === 'Quick Win in a Box') {
         expect(service.calendlyLink).toBe('https://calendly.com/gsdatwork/free-consult')
       } else {
         expect(service.calendlyLink).toBe('https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call')

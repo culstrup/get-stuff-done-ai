@@ -310,7 +310,7 @@ const AIOracle = () => {
                         className="text-green-700 border-green-300 hover:bg-green-100"
                         onClick={() => window.location.href = "/methodology/action-workshop"}
                       >
-                        → AI Action Workshop
+                        → Quick Win in a Box
                       </Button>
                     </CardContent>
                   </Card>

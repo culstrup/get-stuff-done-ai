@@ -45,7 +45,7 @@ export const DesktopNavigation = () => {
                           <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 0</span>
                           <span className="text-sm font-medium leading-none">Enterprise AI Cooking Show</span>
                         </div>
-                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">$4,999</span>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2"><span aria-label="Bitcoin">₿</span>0.05</span>
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         High-energy, live AI transformation workshop
@@ -64,7 +64,7 @@ export const DesktopNavigation = () => {
                           <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 1</span>
                           <span className="text-sm font-medium leading-none">AI Oracle Session</span>
                         </div>
-                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">$2,499</span>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2"><span aria-label="Bitcoin">₿</span>0.05</span>
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         AI-powered executive intelligence system
@@ -81,9 +81,9 @@ export const DesktopNavigation = () => {
                       <div className="flex items-start justify-between mb-1">
                         <div>
                           <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 2</span>
-                          <span className="text-sm font-medium leading-none">AI Action Workshop</span>
+                          <span className="text-sm font-medium leading-none">Quick Win in a Box</span>
                         </div>
-                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">$4,999</span>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2"><span aria-label="Bitcoin">₿</span>0.05</span>
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Quick win in a box - 10X transformation guaranteed

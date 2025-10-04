@@ -7,6 +7,22 @@ import { ServiceType } from './types'
 // Mock window.open
 global.window.open = vi.fn()
 
+// Mock the useBitcoinPrice hook
+vi.mock('@/hooks/use-bitcoin-price', () => ({
+  useBitcoinPrice: () => ({
+    data: 95000, // Mock BTC price
+    isLoading: false,
+    error: null
+  }),
+  btcToUsd: (btcAmount: number, btcPrice: number) => btcAmount * btcPrice,
+  formatUsd: (amount: number) => new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(amount)
+}))
+
 // Wrapper component for React Router
 const renderWithRouter = (component: React.ReactElement) => {
   return render(<BrowserRouter>{component}</BrowserRouter>)

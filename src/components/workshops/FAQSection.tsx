@@ -58,7 +58,7 @@ export const FAQSection: React.FC = () => {
                 <h3 className="text-lg font-bold text-left">What is the $2,500 workflow transformation shown in the replay?</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 text-gray-700">
-                In the recording, you'll see a comprehensive workflow transformation guided by expert Christian Ulstrup. This mirrors our private AI Action Workshop (valued at $2,500) where we analyze and transform a specific legal workflow using AI tools. By watching the replay, you'll gain insights into this process that you can apply to your own firm's operations.
+                In the recording, you'll see a comprehensive workflow transformation guided by expert Christian Ulstrup. This mirrors our private Quick Win in a Box workshop where we analyze and transform a specific legal workflow using AI tools. By watching the replay, you'll gain insights into this process that you can apply to your own firm's operations.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

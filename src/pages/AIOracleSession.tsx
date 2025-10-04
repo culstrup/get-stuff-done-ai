@@ -4,17 +4,24 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
-import { 
-  Database, Files, Clock, MessageSquare, 
-  DollarSign, Zap, Target, Search, 
-  UserRound, Lightbulb, BrainCircuit, Rocket, 
-  CheckCircle, FileText, Mail, Phone, Clipboard, 
+import {
+  Database, Files, Clock, MessageSquare,
+  DollarSign, Zap, Target, Search,
+  UserRound, Lightbulb, BrainCircuit, Rocket,
+  CheckCircle, FileText, Mail, Phone, Clipboard,
   Users, ArrowRight
 } from "lucide-react";
+import { useBitcoinPrice, btcToUsd, formatUsd } from "@/hooks/use-bitcoin-price";
 
 const AIOracleSession = () => {
+  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+  const btcAmount = 0.05;
+
+  // Calculate USD equivalent
+  const usdPrice = btcPrice ? formatUsd(btcToUsd(btcAmount, btcPrice)) : null;
+
   // Calendly links
-  const workshopCalendlyLink = "https://calendly.com/gsdatwork/ai-workshop"; 
+  const workshopCalendlyLink = "https://calendly.com/gsdatwork/ai-workshop";
   const consultationCalendlyLink = "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call";
 
   // Current date for dateModified schema property
@@ -27,7 +34,7 @@ const AIOracleSession = () => {
     "https://gsdat.work/ai-oracle-session",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "GSD at Work",
-    "$2,499"
+    "0.05 BTC"
   );
 
   // FAQ structured data
@@ -50,7 +57,7 @@ const AIOracleSession = () => {
     },
     {
       question: "How much does the AI Oracle Session cost?",
-      answer: "$2,499 for the initial setup and training session with satisfaction guaranteed. This includes setting up the system for ongoing use in your executive meetings."
+      answer: "0.05 BTC for the initial setup and training session with satisfaction guaranteed. This includes setting up the system for ongoing use in your executive meetings."
     }
   ]);
 
@@ -96,7 +103,7 @@ const AIOracleSession = () => {
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <DollarSign className="h-5 w-5 text-secondary" />
                     </div>
-                    <span className="font-medium">$2,499 Flat Fee</span>
+                    <span className="font-medium">{usdPrice || "0.05 BTC"} Flat Fee</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
@@ -447,7 +454,14 @@ const AIOracleSession = () => {
               </h2>
               
               <div className="mb-8">
-                <span className="text-4xl font-bold text-secondary">$2,499</span>
+                {usdPrice && !btcLoading ? (
+                  <>
+                    <span className="text-4xl font-bold text-secondary">{usdPrice}</span>
+                    <p className="text-sm text-gray-600 mt-1">(0.05 BTC)</p>
+                  </>
+                ) : (
+                  <span className="text-4xl font-bold text-secondary">0.05 BTC</span>
+                )}
                 <p className="text-gray-700 mt-2">Initial AI Oracle Setup & Training</p>
                 <p className="text-sm font-medium text-secondary mt-1">Satisfaction Guaranteed</p>
               </div>

@@ -131,7 +131,7 @@ export const About = () => {
                   <div className="grid grid-cols-1 gap-4">
                     {[
                       "Hand-picked by Christian Ulstrup for their expertise and methodology alignment",
-                      "Trained extensively in the GSD AI Action Workshop framework",
+                      "Trained extensively in the GSD Quick Win in a Box framework",
                       "Certified to deliver the same transformative results with competitive pricing", 
                       "Backed by our satisfaction guarantee—same quality as founder-led services"
                     ].map((item, index) => (
