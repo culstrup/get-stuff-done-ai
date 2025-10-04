@@ -206,12 +206,12 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
                         </span>
                         <span className="text-sm text-gray-500">one-time</span>
                       </div>
-                      <span className="text-xs text-gray-500">({service.price})</span>
+                      <span className="text-xs text-gray-500">(₿{service.btcPrice})</span>
                     </>
                   ) : (
                     <div className="flex items-baseline gap-1">
                       <span className="text-2xl font-bold text-secondary">
-                        {service.price}
+                        {service.price.replace(/BTC/, '₿')}
                       </span>
                       {service.price !== "Custom" && !service.price.includes("Starts") && (
                         <span className="text-sm text-gray-500">one-time</span>

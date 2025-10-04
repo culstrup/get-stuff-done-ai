@@ -52,9 +52,9 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
     },
     "ai-action-workshop": {
       id: "ai-action-workshop",
-      title: "2-Hour AI Action Workshop",
+      title: "Quick Win in a Box",
       description: "Hands-on AI implementation working session with immediate results",
-      price: "$2,499",
+      price: "0.05 BTC",
       link: "/ai-action-workshop",
       badge: "Quick Start",
       features: ["2-hour intensive session", "Immediate implementation", "Proven frameworks"]

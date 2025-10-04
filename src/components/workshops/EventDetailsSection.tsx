@@ -22,7 +22,7 @@ export const EventDetailsSection: React.FC = () => {
           <div className="bg-blue-50 border-l-4 border-secondary p-6 mb-6 rounded-r-lg">
             <h3 className="text-xl font-bold text-primary mb-3">See a $2,500 Value Workflow Transformation in Action</h3>
             <p className="text-gray-700 mb-4">
-              In this recording, you'll witness a live, hands-on workflow transformation, a process we offer in our private AI Action Workshops (valued at $2,500). See how Christian Ulstrup analyzed a firm's specific workflow (using anonymized data for confidentiality) and implemented AI tools step-by-step to drive efficiency. This is an unparalleled chance to see expert AI implementation insight applied to a real-world legal scenario.
+              In this recording, you'll witness a live, hands-on workflow transformation, a process we offer in our private Quick Win in a Box workshops. See how Christian Ulstrup analyzed a firm's specific workflow (using anonymized data for confidentiality) and implemented AI tools step-by-step to drive efficiency. This is an unparalleled chance to see expert AI implementation insight applied to a real-world legal scenario.
             </p>
           </div>
           

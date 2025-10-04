@@ -39,10 +39,10 @@ export const EngagementLevels = () => {
               {quickWinUsd && !btcLoading ? (
                 <>
                   <p className="text-lg font-semibold text-blue-600">{quickWinUsd}</p>
-                  <p className="text-sm text-gray-600">(0.05 BTC)</p>
+                  <p className="text-sm text-gray-600">(₿0.05)</p>
                 </>
               ) : (
-                <p className="text-lg font-semibold text-blue-600">0.05 BTC</p>
+                <p className="text-lg font-semibold text-blue-600">₿0.05</p>
               )}
             </div>
 

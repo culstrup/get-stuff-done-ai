@@ -9,7 +9,7 @@ export const EnhancedFooter = () => {
   const navigationLinks = {
     services: [
       { name: "Enterprise AI Cooking Show", href: "/enterprise-ai-cooking-show", description: "Live AI transformation workshop" },
-      { name: "AI Action Workshop", href: "/ai-action-workshop", description: "Quick win in a box" },
+      { name: "Quick Win in a Box", href: "/ai-action-workshop", description: "Quick win in a box" },
       { name: "10x Executive Program", href: "/10x-executive", description: "Executive productivity transformation" },
       { name: "Triple-A Transformation", href: "/triple-a-transformation", description: "Complete organizational AI adoption" },
       { name: "AI Oracle Session", href: "/ai-oracle-session", description: "Executive intelligence system" },
