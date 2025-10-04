@@ -4,6 +4,7 @@ import { Check, ArrowRight, Clock, Users, Target } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useBitcoinPrice, btcToUsd, formatUsd } from "@/hooks/use-bitcoin-price";
 
 interface ServiceComparisonProps {
   title?: string;
@@ -18,12 +19,21 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
   showAllServices = true,
   highlightService
 }) => {
+  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+
+  // Calculate USD equivalent
+  const getUsdEquivalent = (btcAmount?: number) => {
+    if (!btcAmount || !btcPrice) return null;
+    return formatUsd(btcToUsd(btcAmount, btcPrice));
+  };
+
   const services = [
     {
       id: "enterprise-ai-cooking-show",
       name: "Enterprise AI Cooking Show",
       subtitle: "Live Transformation Workshop",
-      price: "$4,999",
+      price: "0.05 BTC",
+      btcPrice: 0.05,
       duration: "Live Session",
       ideal: "Enterprise teams & mastermind groups",
       icon: <Clock className="h-6 w-6" />,
@@ -46,7 +56,8 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
       id: "ai-oracle-session",
       name: "AI Oracle Session",
       subtitle: "Executive Intelligence System",
-      price: "$2,499",
+      price: "0.05 BTC",
+      btcPrice: 0.05,
       duration: "Setup & Integration",
       ideal: "C-suite & senior leadership",
       icon: <Clock className="h-6 w-6" />,
@@ -67,9 +78,10 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
     },
     {
       id: "ai-action-workshop",
-      name: "AI Action Workshop",
+      name: "Quick Win in a Box",
       subtitle: "Quick Start Implementation",
-      price: "$4,999",
+      price: "0.05 BTC",
+      btcPrice: 0.05,
       duration: "Quick Win Implementation",
       ideal: "Individual contributors, small teams",
       icon: <Target className="h-6 w-6" />,
@@ -80,35 +92,12 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
         "Working AI solution by end of session",
         "Transferable frameworks and SOPs",
         "Follow-up support and templates",
-        "Perfect for testing our approach"
+        "Performance-based pricing available"
       ],
       outcomes: [
         "100-2000% efficiency gains",
         "10X transformation in hours not days",
         "Ready-to-use processes"
-      ]
-    },
-    {
-      id: "10x-executive",
-      name: "10x Executive Program",
-      subtitle: "Executive & Team Transformation",
-      price: "$19,999",
-      duration: "10 weeks",
-      ideal: "Executives and their teams",
-      icon: <Users className="h-6 w-6" />,
-      color: "bg-purple-500",
-      link: "/10x-executive",
-      features: [
-        "5 bi-weekly sessions (2 hours each)",
-        "Team members welcome to join",
-        "Organization-wide AI implementation",
-        "Scalable automation frameworks",
-        "Session recordings for knowledge sharing"
-      ],
-      outcomes: [
-        "10x productivity across teams",
-        "Organization-wide AI adoption",
-        "Scalable AI processes"
       ]
     },
     {
@@ -138,9 +127,10 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
       id: "triple-a-transformation",
       name: "Triple-A Transformation",
       subtitle: "Organizational Change",
-      price: "Custom",
+      price: "Starts at 1 BTC",
+      btcPrice: 1.0,
       duration: "14 weeks",
-      ideal: "Organizations, large teams",
+      ideal: "100+ person organizations",
       icon: <Target className="h-6 w-6" />,
       color: "bg-orange-500",
       link: "/triple-a-transformation",
@@ -149,7 +139,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
         "Team-wide transformation program",
         "Measurable ROI and KPI tracking",
         "Change management support",
-        "Custom implementation roadmap"
+        "Performance-based pricing options"
       ],
       outcomes: [
         "Organization-wide AI adoption",
@@ -207,12 +197,26 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
                   {service.subtitle}
                 </p>
                 
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-secondary">
-                    {service.price}
-                  </span>
-                  {service.price !== "Custom" && (
-                    <span className="text-sm text-gray-500">one-time</span>
+                <div className="flex flex-col gap-1">
+                  {service.btcPrice && !btcLoading && getUsdEquivalent(service.btcPrice) ? (
+                    <>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-2xl font-bold text-secondary">
+                          {getUsdEquivalent(service.btcPrice)}
+                        </span>
+                        <span className="text-sm text-gray-500">one-time</span>
+                      </div>
+                      <span className="text-xs text-gray-500">({service.price})</span>
+                    </>
+                  ) : (
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-2xl font-bold text-secondary">
+                        {service.price}
+                      </span>
+                      {service.price !== "Custom" && !service.price.includes("Starts") && (
+                        <span className="text-sm text-gray-500">one-time</span>
+                      )}
+                    </div>
                   )}
                 </div>
                 

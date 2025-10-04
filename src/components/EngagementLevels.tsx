@@ -2,8 +2,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import { animations, spacing } from "@/lib/design-tokens";
+import { useBitcoinPrice, btcToUsd, formatUsd } from "@/hooks/use-bitcoin-price";
 
 export const EngagementLevels = () => {
+  const { data: btcPrice, isLoading: btcLoading } = useBitcoinPrice();
+  const quickWinBtc = 0.05;
+
+  // Calculate USD equivalent
+  const quickWinUsd = btcPrice ? formatUsd(btcToUsd(quickWinBtc, btcPrice)) : null;
+
   return (
     <section className={`${spacing.section.lg} bg-gradient-to-b from-gray-50 to-white`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,26 +32,33 @@ export const EngagementLevels = () => {
             </div>
             
             <h3 className="text-2xl font-bold text-gray-900 mb-3">
-              AI Action Workshop - Quick Win
+              Quick Win in a Box
             </h3>
-            
-            <p className="text-lg font-semibold text-blue-600 mb-4">
-              $4,999
-            </p>
-            
+
+            <div className="mb-4">
+              {quickWinUsd && !btcLoading ? (
+                <>
+                  <p className="text-lg font-semibold text-blue-600">{quickWinUsd}</p>
+                  <p className="text-sm text-gray-600">(0.05 BTC)</p>
+                </>
+              ) : (
+                <p className="text-lg font-semibold text-blue-600">0.05 BTC</p>
+              )}
+            </div>
+
             <p className="text-gray-700 mb-6">
-              Perfect for teams ready to experience immediate AI impact. Break your 
+              Perfect for teams ready to experience immediate AI impact. Break your
               four-minute mile in a single hands-on session.
             </p>
-            
+
             <ul className="space-y-3 mb-8">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">✓</span>
-                <span className="text-gray-700">1-2 hour hands-on workshop</span>
+                <span className="text-gray-700">1-2 hour hands-on session</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">✓</span>
-                <span className="text-gray-700">Founder-led ($4,999) or Associate-led (competitive rates)</span>
+                <span className="text-gray-700">Founder-led or Associate-led (competitive rates)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">✓</span>
@@ -54,12 +68,16 @@ export const EngagementLevels = () => {
                 <span className="text-blue-600 mr-2">✓</span>
                 <span className="text-gray-700">Create reusable processes & SOPs</span>
               </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mr-2">✓</span>
+                <span className="text-gray-700">Bundle discounts: 20% (5-pack) or 30% (10-pack)</span>
+              </li>
             </ul>
             
             <div className="space-y-3">
               <Link to="/ai-action-workshop" className="block">
                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  Explore Workshop Options
+                  Explore Quick Win Options
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
